@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>fjqz177的Hexo博客Next</title>
-    <link>https://fjqz177.github.io/fjqz177-hexo-next-pages/</link>
+    <link>http://example.com/</link>
     <language>zh-CN</language>
     <copyright>All rights reserved 2026, fjqz177</copyright>
     <lastBuildDate>Thu, 12 Feb 2026 10:51:03 GMT</lastBuildDate>
     <generator>Hexo</generator>
     <image>
-      <url>https://fjqz177.github.io/fjqz177-hexo-next-pages/images/apple-touch-icon-next.png</url>
+      <url>http://example.com/images/apple-touch-icon-next.png</url>
       <title>fjqz177的Hexo博客Next</title>
-      <link>https://fjqz177.github.io/fjqz177-hexo-next-pages/</link>
+      <link>http://example.com/</link>
     </image>
-    <atom:link href="https://fjqz177.github.io/fjqz177-hexo-next-pages/atom.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="http://example.com/atom.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Hello World</title>
-      <link>https://fjqz177.github.io/fjqz177-hexo-next-pages/2026/02/12/hello-world/</link>
+      <link>http://example.com/2026/02/12/hello-world/</link>
       <description>
         <![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a>]]>
       </description>
