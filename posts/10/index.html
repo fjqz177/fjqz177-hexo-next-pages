@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"github","dark":"github-dark-dimmed"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="这是最终效果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何给Git Commit GPG签名？">
+<meta property="og:url" content="http://example.com/posts/10/index.html">
+<meta property="og:site_name" content="fjqz177的Hexo博客Next">
+<meta property="og:description" content="这是最终效果">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66140ea268eb935713913019.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/66140e5268eb935713908474.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/6613ff9d68eb93571372274a.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/6614056168eb9357137d5c58.png">
+<meta property="article:published_time" content="2024-04-26T04:46:00.000Z">
+<meta property="article:modified_time" content="2025-11-03T10:30:05.902Z">
+<meta property="article:author" content="fjqz177">
+<meta property="article:tag" content="GPG签名">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="密码学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/66140ea268eb935713913019.png">
+
+
+<link rel="canonical" href="http://example.com/posts/10/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/posts/10/","path":"posts/10/","title":"如何给Git Commit GPG签名？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>如何给Git Commit GPG签名？ | fjqz177的Hexo博客Next</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+
+  <script src="/js/third-party/pace.js" defer></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+<link rel="dns-prefetch" href="https://hexo-waline-indol.vercel.app"><link rel="preconnect" href="https://chinese-fonts-cdn.deno.dev" crossorigin>
+<link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-Regular/result.css" media="all">
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document
+      .body
+      .classList
+      .add('post-center-enabled');
+  });
+</script>
+<style>
+  .code,
+  .code-block,
+  .highlight,
+  .highlight code,
+  .highlight pre,
+  .hljs,
+  .post-body code,
+  .post-body pre,
+  article code,
+  article pre,
+  code,
+  figure.highlight code,
+  kbd,
+  pre,
+  pre code,
+  samp {
+    font-family: "Maple Mono CN", "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+      document
+        .querySelectorAll('.code-lang')
+        .forEach(function (el) {
+          var figure = el
+            .parentElement
+            .querySelector('figure.highlight');
+          if (figure) {
+            var classes = figure
+              .className
+              .split(' ');
+            for (var i = 0; i < classes.length; i++) {
+              if (classes[i] !== 'highlight' && classes[i] !== 'figure') {
+                el.setAttribute('data-lang', classes[i]);
+                break;
+              }
+            }
+          }
+        });
+    }, 100);
+  });
+</script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="fjqz177的Hexo博客Next" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">fjqz177的Hexo博客Next</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">这是最终效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%B7%E5%9B%A0"><span class="nav-number">1.1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFGPG"><span class="nav-number">1.2.</span> <span class="nav-text">什么是GPG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85GPG"><span class="nav-number">1.3.1.</span> <span class="nav-text">安装GPG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84GPG%E5%AF%86%E9%92%A5"><span class="nav-number">1.3.2.</span> <span class="nav-text">生成自己的GPG密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E8%81%94GPG%E5%85%AC%E9%92%A5%E4%B8%8EGithub%E8%B4%A6%E6%88%B7"><span class="nav-number">1.3.3.</span> <span class="nav-text">关联GPG公钥与Github账户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8GPG%E7%A7%81%E9%92%A5%E5%AF%B9Git-commit%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D"><span class="nav-number">1.3.4.</span> <span class="nav-text">利用GPG私钥对Git commit进行签名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E6%AD%A5%E9%AA%A4%EF%BC%9A%E4%BF%A1%E4%BB%BBGithub%E7%9A%84GPG%E5%AF%86%E9%92%A5"><span class="nav-number">1.4.</span> <span class="nav-text">可选步骤：信任Github的GPG密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F"><span class="nav-number">1.5.</span> <span class="nav-text">结束</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="fjqz177"
+      src="/images/my_avatar.jpg">
+  <p class="site-author-name" itemprop="name">fjqz177</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fjqz177" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fjqz177" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fjqz177@139.com" title="E-Mail → mailto:fjqz177@139.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5862441076" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5862441076" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/436591517" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;436591517" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/fjqz177" title="Zhihu → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;fjqz177" rel="noopener me" target="_blank"><i class="fab fa-zhihu fa-fw"></i>Zhihu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/posts/10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/my_avatar.jpg">
+      <meta itemprop="name" content="fjqz177">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fjqz177的Hexo博客Next">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="如何给Git Commit GPG签名？ | fjqz177的Hexo博客Next">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何给Git Commit GPG签名？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-04-26 12:46:00" itemprop="dateCreated datePublished" datetime="2024-04-26T12:46:00+08:00">2024-04-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-11-03 18:30:05" itemprop="dateModified" datetime="2025-11-03T18:30:05+08:00">2025-11-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/10/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/posts/10/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1>这是最终效果</h1>
+<p><img src="https://pic.imgdb.cn/item/66140ea268eb935713913019.png" alt=""></p>
+<span id="more"></span>
+<h2 id="起因">起因</h2>
+<p>其实在很早之前 Github 就已经充分支持 GPG 密钥了，而在我之前使用 Github 的两年时间内，竟对此一无所知，实在有些“没见过世面”。直至近日，在一次偶然查看仓库的commit历史中，发现某些commit有一个不同寻常的绿色标记（Verified），不仅美观而且看上去舒心，如图所示：</p>
+<p><img src="https://pic.imgdb.cn/item/66140e5268eb935713908474.png" alt=""></p>
+<p>点击这个标记，得知这一次commit是经过签名验证的（signed with a verified signature），因此，我便开始研究如何利用GPG对自己的每次commit进行签名验证。</p>
+<h2 id="什么是GPG">什么是GPG</h2>
+<blockquote>
+<p>GnuPG is a complete and free implementation of the OpenPGP standard as defined by <a target="_blank" rel="noopener" href="https://www.ietf.org/rfc/rfc4880.txt">RFC4880</a> (also known as <em>PGP</em>). GnuPG allows you to encrypt and sign your data and communications; it features a versatile key management system, along with access modules for all kinds of public key directories. GnuPG, also known as <em>GPG</em>, is a command line tool with features for easy integration with other applications. A wealth of <a target="_blank" rel="noopener" href="https://gnupg.org/software/frontends.html">frontend applications</a> and <a target="_blank" rel="noopener" href="https://gnupg.org/software/libraries.html">libraries</a> are available. GnuPG also provides support for S/MIME and Secure Shell (ssh).</p>
+<p>Since its introduction in 1997, GnuPG is <a target="_blank" rel="noopener" href="https://www.gnu.org/philosophy/free-sw.html">Free Software</a> (meaning that it respects your freedom). It can be freely used, modified and distributed under the terms of the <a target="_blank" rel="noopener" href="https://www.gnu.org/copyleft/gpl.html">GNU General Public License</a> .</p>
+<p>The current version of GnuPG is 2.4.5. See the <a target="_blank" rel="noopener" href="https://gnupg.org/download/index.html">download</a> page for other maintained versions.</p>
+<p><a target="_blank" rel="noopener" href="https://www.gpg4win.org/">Gpg4win</a> is a Windows version of GnuPG featuring a context menu tool, a crypto manager, and an Outlook plugin to send and receive standard PGP/MIME mails. The current version of Gpg4win is 4.3.1.</p>
+</blockquote>
+<p>以上是从<a target="_blank" rel="noopener" href="https://gnupg.org/">GPG网站</a>上摘取的部分简介，总的来说，GPG的功能十分丰富，然而我这次主要是用它来对Git中的commit进行签名验证，所以需要做的事情也不算太复杂：</p>
+<ol>
+<li>生成自己的GPG密钥</li>
+<li>关联GPG公钥与Github账户</li>
+<li>设置利用GPG私钥对commit进行签名</li>
+<li>可选步骤：信任Github的GPG密钥</li>
+</ol>
+<h2 id="过程">过程</h2>
+<h3 id="安装GPG">安装GPG</h3>
+<p>由于我的目的是在Git中使用GPG，而Windows版本的Git发行包中，已经包含了可用的GPG命令行。判断方法也很简单，打开Git Bash，输入<code>gpg --version</code>，可以看到类似的GPG版本信息：</p>
+<p><img src="https://pic.imgdb.cn/item/6613ff9d68eb93571372274a.png" alt=""></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ gpg --version</span><br><span class="line">gpg (GnuPG) 2.4.4-unknown</span><br><span class="line">libgcrypt 1.9.4-unknown</span><br><span class="line">Copyright (C) 2024 g10 Code GmbH</span><br><span class="line">License GNU GPL-3.0-or-later &lt;https://gnu.org/licenses/gpl.html&gt;</span><br><span class="line">This is free software: you are free to change and redistribute it.</span><br><span class="line">There is NO WARRANTY, to the extent permitted by law.</span><br><span class="line"></span><br><span class="line">Home: /c/Users/fjqz177/.gnupg</span><br><span class="line">Supported algorithms:</span><br><span class="line">Pubkey: RSA, ELG, DSA, ECDH, ECDSA, EDDSA</span><br><span class="line">Cipher: IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,</span><br><span class="line">        CAMELLIA128, CAMELLIA192, CAMELLIA256</span><br><span class="line">Hash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224</span><br><span class="line">Compression: Uncompressed, ZIP, ZLIB, BZIP2</span><br></pre></td></tr></table></figure>
+<h3 id="生成自己的GPG密钥">生成自己的GPG密钥</h3>
+<p>打开Git Bash，运行<code>gpg --full-generate-key</code>，根据提示，输入相应的个人信息（<strong>需要注意的是邮箱必须要使用在Github中验证过的邮箱</strong>）、自定义密钥参数、设置私钥密码等等，即可生成自己的GPG密钥。（补充说明，使用<code>gpg --gen-key</code>亦可生成密钥，但是会略去自定义密钥参数的步骤，对于一般场合的使用问题不大。）</p>
+<p>输出结果的末尾大致如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pub   ed25519 2024-04-08 [SC] [expires: 2027-04-08]</span><br><span class="line">      3679AE2AC28CD97D026F5D64BE77A57CFB552D88</span><br><span class="line">uid                      <span class="built_in">test</span> &lt;<span class="built_in">test</span>@test.com&gt;</span><br><span class="line">sub   cv25519 2024-04-08 [E] [expires: 2027-04-08]</span><br></pre></td></tr></table></figure>
+<p>需要记下的，是上述输出信息中的密钥ID：<br>
+<code>3679AE2AC28CD97D026F5D64BE77A57CFB552D88</code> 或者<code>BE77A57CFB552D88</code>，后者是前者的简短形式，是密钥ID的倒数16个字符。</p>
+<p>当然，如果没有及时将其记下也不要紧，可以运行<code>gpg --list-keys</code>，列出本地存储的所有GPG密钥信息，大致如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ gpg --list-keys</span><br><span class="line"><span class="comment"># 省略一大部分</span></span><br><span class="line">pub   ed25519 2024-04-08 [SC] [expires: 2027-04-08]</span><br><span class="line">      3679AE2AC28CD97D026F5D64BE77A57CFB552D88</span><br><span class="line">uid           [ultimate] <span class="built_in">test</span> &lt;<span class="built_in">test</span>@test.com&gt;</span><br><span class="line">sub   cv25519 2024-04-08 [E] [expires: 2027-04-08]</span><br></pre></td></tr></table></figure>
+<p>稍微解读一下这些结果：</p>
+<ul>
+<li><code>pub</code>其后的是该密钥的公钥特征</li>
+<li>
+<ol>
+<li><code>Ed25519</code>是<code>EdDSA</code>签名方案，但使用<code>SHA-512 / 256</code>和<code>Curve25519</code>；它是一条安全的椭圆形曲线，比<code>DSA</code>，<code>ECDSA</code>和<code>EdDSA</code>提供更好的安全性，并且具有更好的性能。</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>密钥创建时间</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>用途是<code>Signing</code>和<code>Certificating</code></li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>过期时间（<code>gpg --gen-key</code>默认3年之后过期）</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>密钥的ID。</li>
+</ol>
+</li>
+<li><code>uid</code>其后的是生成密钥时所输入的个人信息。</li>
+<li><code>sub</code>其后的则是该密钥的子密钥特征，格式和公钥部分大致相同（E表示用途是Encrypting）。</li>
+</ul>
+<h3 id="关联GPG公钥与Github账户">关联GPG公钥与Github账户</h3>
+<p>还记得在上一步中记下的密钥ID吗？现在，我们需要根据这个ID来导出对应GPG密钥的公钥字符串。继续在Git Bash中，运行命令<code>gpg --armor --export {key_id}</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ gpg --armor --<span class="built_in">export</span> 3679AE2AC28CD97D026F5D64BE77A57CFB552D88</span><br><span class="line">-----BEGIN PGP PUBLIC KEY BLOCK-----</span><br><span class="line"></span><br><span class="line">mDMEZhQBlBYJKwYBBAHaRw8BAQdA1OYDdzmuH7SBWxI7HOqsxn6NxSAWDu7N6h4o</span><br><span class="line">c2hM5Jq0FHRlc3QgPHRlc3RAdGVzdC5jb20+iJkEExYKAEEWIQQ2ea4qwozZfQJv</span><br><span class="line">XWS+d6V8+1UtiAUCZhQBlAIbAwUJBaOagAULCQgHAgIiAgYVCgkICwIEFgIDAQIe</span><br><span class="line">BwIXgAAKCRC+d6V8+1UtiKpwAP91C5ymjro8IGLSTlmVi/ujI17CDIlE9O4oPT4q</span><br><span class="line">NVeAOQD7BZOP7wGYgmhXyWR1GOAxoSyKXCEwUp0nbCPwT4o0vgm4OARmFAGUEgor</span><br><span class="line">BgEEAZdVAQUBAQdAJwvKNZFa+jEo1MZHTolvrrVjBpf9TU7O4YrkQcfmhAUDAQgH</span><br><span class="line">iH4EGBYKACYWIQQ2ea4qwozZfQJvXWS+d6V8+1UtiAUCZhQBlAIbDAUJBaOagAAK</span><br><span class="line">CRC+d6V8+1UtiNeHAQCOtH6wTDCcBEE4Dfehf2OdPNVZDo3HRmuK5IfZlbtXuwD+</span><br><span class="line">Ljm1lcAF3re1vs7GRn7UA2UKMVpnWuC0WnWFVXQNtwA=</span><br><span class="line">=KGi3</span><br><span class="line">-----END PGP PUBLIC KEY BLOCK-----</span><br></pre></td></tr></table></figure>
+<p>然后，在Github的<a target="_blank" rel="noopener" href="https://github.com/settings/keys">SSH and GPG keys</a>中，新增一个GPG key，内容从<code>-----BEGIN PGP PUBLIC KEY BLOCK-----</code>开始到<code>-----END PGP PUBLIC KEY BLOCK-----</code>结尾，要完整地粘贴上去。</p>
+<p>再次提醒，GPG密钥中个人信息的邮箱部分，必须使用在Github中验证过的邮箱，否则添加GPG key会提示未经验证。</p>
+<h3 id="利用GPG私钥对Git-commit进行签名">利用GPG私钥对Git commit进行签名</h3>
+<p>首先，需要让Git知道签名所用的GPG密钥ID：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.signingkey &#123;key_id&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，在每次commit的时候，加上<code>-S</code>参数，表示这次提交需要用GPG密钥进行签名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -S -m <span class="string">&quot;...&quot;</span></span><br></pre></td></tr></table></figure>
+<p>如果觉得每次都需要手动加上<code>-S</code>有些麻烦，可以设置Git为每次commit自动要求签名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global commit.gpgsign <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>但不论是否需要手动加上<code>-S</code>，commit时皆会弹出对话框，需要输入该密钥的密码，以确保是密钥拥有者本人操作，如图所示：</p>
+<p>输入正确密码后，本次commit便被签名验证，push到Github远程仓库后，即可显示出Verified绿色标记，点击Verified绿色标记，即可查看相关信息（由于<code>test &lt;test@test.com&gt;</code>密钥的邮箱未经验证，所以此处实际用的是我本人的密钥进行签名）：</p>
+<p><img src="https://pic.imgdb.cn/item/6614056168eb9357137d5c58.png" alt=""></p>
+<h2 id="可选步骤：信任Github的GPG密钥">可选步骤：信任Github的GPG密钥</h2>
+<p>事实上，在完成上述步骤后，已经可以<strong>基本</strong>完全正常地同时使用Github和GPG了，那为什么还需要这一步骤呢？很简单，不妨用<code>git log --show-signature</code>试试查看本地的某个Git仓库的commit记录和签名信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --show-signature</span><br><span class="line"><span class="comment"># 省略一大部分</span></span><br><span class="line">commit ec37d4af120a69dafa077052cfdf4f5e33fa1ef3 (HEAD -&gt; master)</span><br><span class="line">gpg: Signature made 2024年04月 4日 12:52:29</span><br><span class="line">gpg:                using RSA key 1BA074F113915706D141348CDC3DB5873563E6B2</span><br><span class="line">gpg: Good signature from <span class="string">&quot;fjqz177 &lt;fjqz177@139.com&gt;&quot;</span> [ultimate]</span><br><span class="line">Author: fjqz177 &lt;fjqz177@139.com&gt;</span><br><span class="line">Date:   Sun April 7 12:52:29 2024 +0800</span><br><span class="line"></span><br><span class="line">    <span class="built_in">test</span> GPG</span><br><span class="line"></span><br><span class="line">commit 6937d638d950362f73bfbf28bc4a39d1700bf26b</span><br><span class="line">gpg: Signature made 2024年04月 4日 11:58:46</span><br><span class="line">gpg:                using RSA key B5690EEEBB952194</span><br><span class="line">gpg: Can<span class="string">&#x27;t check signature: No public key</span></span><br><span class="line"><span class="string">Author: fjqz177 &lt;20233656+fjqz177@users.noreply.github.com&gt;</span></span><br><span class="line"><span class="string">Date:   Sun April 7 11:58:46 2024 +0800</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Initial commit</span></span><br></pre></td></tr></table></figure>
+<p>可以发现，虽然所有的commit在Github中查看都是Verified，但是有一些比较特殊：在Github网页端进行的操作，比如创建仓库。这些commit并没有用我们之前生成的密钥进行签名，而是由Github代为签名了。这样的结果就是，我们本地无法确认这些签名的真实性。</p>
+<p>为了解决这个问题，我们需要导入并信任<a target="_blank" rel="noopener" href="https://github.com/web-flow.gpg">Github所用的GPG密钥</a>。</p>
+<p>由于我这里已经导入过了，所以显示的内容可能会不一样。</p>
+<p>先是导入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://github.com/web-flow.gpg | gpg --import</span><br><span class="line"><span class="comment"># 省略一大部分</span></span><br><span class="line">gpg: key 4AEE18F83AFDEB23: <span class="string">&quot;GitHub (web-flow commit signing) &lt;noreply@github.com&gt;&quot;</span> not changed</span><br><span class="line">gpg: key B5690EEEBB952194: <span class="string">&quot;GitHub &lt;noreply@github.com&gt;&quot;</span> not changed</span><br><span class="line">gpg: Total number processed: 2</span><br><span class="line">gpg:              unchanged: 2</span><br></pre></td></tr></table></figure>
+<p>由于<code>GitHub (web-flow commit signing) &lt;noreply@github.com&gt;</code>密钥已经过期，所以我们只需要给<code>GitHub &lt;noreply@github.com&gt;</code>进行签名即可</p>
+<p>然后是信任（用自己的密钥为其签名验证，需要输入密码）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ gpg --sign-key B5690EEEBB952194</span><br><span class="line"></span><br><span class="line">pub  rsa4096/B5690EEEBB952194</span><br><span class="line">     created: 2024-01-16  expires: never       usage: SC</span><br><span class="line">     trust: unknown       validity: full</span><br><span class="line">[  full  ] (1). GitHub &lt;noreply@github.com&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pub  rsa4096/B5690EEEBB952194</span><br><span class="line">     created: 2024-01-16  expires: never       usage: SC</span><br><span class="line">     trust: unknown       validity: full</span><br><span class="line"> Primary key fingerprint: 9684 79A1 AFF9 27E3 7D1A  566B B569 0EEE BB95 2194</span><br><span class="line"></span><br><span class="line">     GitHub &lt;noreply@github.com&gt;</span><br><span class="line"></span><br><span class="line">Are you sure that you want to sign this key with your</span><br><span class="line">key <span class="string">&quot;fjqz177 &lt;fjqz177@139.com&gt;&quot;</span> (BE77A57CFB552D88)</span><br><span class="line"></span><br><span class="line">Really sign? (y/N) y</span><br></pre></td></tr></table></figure>
+<p>至此，再用<code>git log --show-signature</code>查看本地仓库的commit签名信息，则会发现所有的commit签名都已得到验证：</p>
+<h2 id="结束">结束</h2>
+<p>经过这一番操作，Github和GPG圆满结合在了一起，而我也得到了我想要的Verified标记。不过，GPG的功能远非止于此，它还可以用来对文件、邮件等进行加密，还可以进行身份验证等等，都有待我去学习研究。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag"># 密码学</a>
+              <a href="/tags/Git/" rel="tag"># Git</a>
+              <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+              <a href="/tags/GPG%E7%AD%BE%E5%90%8D/" rel="tag"># GPG签名</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/9/" rel="prev" title="安装完fedora 39后要做的事">
+                  <i class="fa fa-angle-left"></i> 安装完fedora 39后要做的事
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/11/" rel="next" title="怎样在Ubuntu24.04上用命令行正确安装Chrome">
+                  怎样在Ubuntu24.04上用命令行正确安装Chrome <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">fjqz177</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">46k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">42 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div><div>
+  <span id="sitetime"></span>
+  <script language=javascript>
+    function siteTime() {
+      window.setTimeout("siteTime()", 1000);
+      var seconds = 1000;
+      var minutes = seconds * 60;
+      var hours = minutes * 60;
+      var days = hours * 24;
+      var years = days * 365;
+      var today = new Date();
+      var todayYear = today.getFullYear();
+      var todayMonth = today.getMonth() + 1;
+      var todayDate = today.getDate();
+      var todayHour = today.getHours();
+      var todayMinute = today.getMinutes();
+      var todaySecond = today.getSeconds();
+      /*
+          Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+          year - 作为date对象的年份，为4位年份值
+          month - 0-11之间的整数，做为date对象的月份
+          day - 1-31之间的整数，做为date对象的天数
+          hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+          minutes - 0-59之间的整数，做为date对象的分钟数
+          seconds - 0-59之间的整数，做为date对象的秒数
+          microseconds - 0-999之间的整数，做为date对象的毫秒数
+      */
+      var t1 = Date.UTC(2026, 02, 12, 19, 44, 00); //北京时间2018-2-13 00:00:00
+      var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+      var diff = t2 - t1;
+      var diffYears = Math.floor(diff / years);
+      var diffDays = Math.floor((diff / days) - diffYears * 365);
+      var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+      var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+      var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+      document
+        .getElementById("sitetime")
+        .innerHTML = " 已运行" +/* diffYears+" 年 "+ */
+      diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }
+    siteTime();
+  </script>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://hexo-waline-indol.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"el":"#waline","comment":true,"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","path":"/posts/10/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+<!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"left",mobileDisplay:true,models:[{"path":"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE","position":[-10,35],"scale":0.15,"stageStyle":{"width":250,"height":250}},{"path":"https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json","scale":0.12,"position":[0,0],"stageStyle":{"width":250},"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180}},{"path":"https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json","scale":0.12,"position":[0,0],"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180},"stageStyle":{"width":250}}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:15000,message:function(){
+  return axios.get('https://v1.hitokoto.cn?c=i')
+    .then(function (response) {
+      return response.data.hitokoto ;
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+}
+}}});</script><!-- hexo injector body_end end --></body>
+</html>
