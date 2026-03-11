@@ -16,6 +16,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous" defer></script>
 
@@ -53,6 +54,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
 <script src="/fjqz177-hexo-next-pages/js/utils.js" defer></script><script src="/fjqz177-hexo-next-pages/js/motion.js" defer></script><script src="/fjqz177-hexo-next-pages/js/sidebar.js" defer></script><script src="/fjqz177-hexo-next-pages/js/next-boot.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
@@ -63,6 +65,7 @@
   <script src="/fjqz177-hexo-next-pages/js/third-party/tags/mermaid.js" defer></script>
 
 
+  <script src="/fjqz177-hexo-next-pages/js/third-party/fancybox.js" defer></script>
 
   <script src="/fjqz177-hexo-next-pages/js/third-party/pace.js" defer></script>
 
@@ -132,6 +135,45 @@
           }
         });
     }, 100);
+  });
+</script>
+<script>
+  // 图片模糊渐进加载效果
+  document.addEventListener('DOMContentLoaded', function() {
+    var images = document.querySelectorAll('.post-body img');
+    
+    images.forEach(function(img) {
+      if (img.complete && img.naturalHeight !== 0) {
+        img.classList.add('img-loaded');
+      } else {
+        img.addEventListener('load', function() {
+          this.classList.add('img-loaded');
+        });
+        img.addEventListener('error', function() {
+          this.classList.add('img-loaded');
+        });
+      }
+    });
+  });
+  
+  // 返回顶部按钮液态玻璃鼠标跟踪效果
+  document.addEventListener('DOMContentLoaded', function() {
+    var backToTop = document.querySelector('.back-to-top');
+    
+    if (backToTop) {
+      backToTop.addEventListener('mousemove', function(e) {
+        var rect = this.getBoundingClientRect();
+        var x = ((e.clientX - rect.left) / rect.width) * 100;
+        var y = ((e.clientY - rect.top) / rect.height) * 100;
+        this.style.setProperty('--mouse-x', x + '%');
+        this.style.setProperty('--mouse-y', y + '%');
+      });
+      
+      backToTop.addEventListener('mouseleave', function() {
+        this.style.setProperty('--mouse-x', '30%');
+        this.style.setProperty('--mouse-y', '30%');
+      });
+    }
   });
 </script>
   <noscript>
