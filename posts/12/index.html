@@ -141,40 +141,65 @@
 </script>
 <script>
   // 图片模糊渐进加载效果
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     var images = document.querySelectorAll('.post-body img');
-    
-    images.forEach(function(img) {
+
+    images.forEach(function (img) {
       if (img.complete && img.naturalHeight !== 0) {
-        img.classList.add('img-loaded');
+        img
+          .classList
+          .add('img-loaded');
       } else {
-        img.addEventListener('load', function() {
-          this.classList.add('img-loaded');
+        img.addEventListener('load', function () {
+          this
+            .classList
+            .add('img-loaded');
         });
-        img.addEventListener('error', function() {
-          this.classList.add('img-loaded');
+        img.addEventListener('error', function () {
+          this
+            .classList
+            .add('img-loaded');
         });
       }
     });
   });
-  
+
   // 返回顶部按钮液态玻璃鼠标跟踪效果
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     var backToTop = document.querySelector('.back-to-top');
-    
+
     if (backToTop) {
-      backToTop.addEventListener('mousemove', function(e) {
+      backToTop.addEventListener('mousemove', function (e) {
         var rect = this.getBoundingClientRect();
         var x = ((e.clientX - rect.left) / rect.width) * 100;
         var y = ((e.clientY - rect.top) / rect.height) * 100;
-        this.style.setProperty('--mouse-x', x + '%');
-        this.style.setProperty('--mouse-y', y + '%');
+        this
+          .style
+          .setProperty('--mouse-x', x + '%');
+        this
+          .style
+          .setProperty('--mouse-y', y + '%');
       });
-      
-      backToTop.addEventListener('mouseleave', function() {
-        this.style.setProperty('--mouse-x', '30%');
-        this.style.setProperty('--mouse-y', '30%');
+
+      backToTop.addEventListener('mouseleave', function () {
+        this
+          .style
+          .setProperty('--mouse-x', '30%');
+        this
+          .style
+          .setProperty('--mouse-y', '30%');
       });
+    }
+  });
+
+  // 修复搜索框定位问题：将搜索弹出层移到 body 下
+  // 原因：header 有 backdrop-filter 属性，会导致 position: fixed 失效
+  document.addEventListener('DOMContentLoaded', function () {
+    var searchOverlay = document.querySelector('.search-pop-overlay');
+    if (searchOverlay && searchOverlay.parentElement.tagName !== 'BODY') {
+      document
+        .body
+        .appendChild(searchOverlay);
     }
   });
 </script>
@@ -544,13 +569,13 @@ $$</p>
     验收: 3d</pre>
 <h3 id="7-支持图表">7. 支持图表</h3>
 
-<div id="echarts7249" style="width: 500px;height:400px;margin: 0 auto"></div>
+<div id="echarts8074" style="width: 500px;height:400px;margin: 0 auto"></div>
 <script src="https://unpkg.com/echarts@5.6.0/dist/echarts.simple.min.js" ></script>
 <script >
-  if (window.eChartecharts7249ResizeHandler) {
-    window.removeEventListener("resize", eChartecharts7249ResizeHandler);
+  if (window.eChartecharts8074ResizeHandler) {
+    window.removeEventListener("resize", eChartecharts8074ResizeHandler);
   }
-  var optionecharts7249 = {
+  var optionecharts8074 = {
   "backgroundColor": "#212121",
   "title": {
     "text": "「晚晴幽草轩」访问来源",
@@ -623,22 +648,22 @@ $$</p>
   ]
 };
   if (window.echarts !== undefined) {
-    var eChartecharts7249 = echarts.init(document.getElementById('echarts7249'));
-    eChartecharts7249.setOption(optionecharts7249);
-    var eChartecharts7249ResizeHandler = function() {
-      eChartecharts7249.resize();
+    var eChartecharts8074 = echarts.init(document.getElementById('echarts8074'));
+    eChartecharts8074.setOption(optionecharts8074);
+    var eChartecharts8074ResizeHandler = function() {
+      eChartecharts8074.resize();
     };
-    window.addEventListener("resize", eChartecharts7249ResizeHandler);
+    window.addEventListener("resize", eChartecharts8074ResizeHandler);
   }
 </script>
 
-<div id="echarts2926" style="width: 500px;height:400px;margin: 0 auto"></div>
+<div id="echarts5107" style="width: 500px;height:400px;margin: 0 auto"></div>
 <script src="https://unpkg.com/echarts@5.6.0/dist/echarts.simple.min.js" ></script>
 <script >
-  if (window.eChartecharts2926ResizeHandler) {
-    window.removeEventListener("resize", eChartecharts2926ResizeHandler);
+  if (window.eChartecharts5107ResizeHandler) {
+    window.removeEventListener("resize", eChartecharts5107ResizeHandler);
   }
-  var optionecharts2926 = {
+  var optionecharts5107 = {
   legend: {
     data: ['Altitude (km) vs. temperature (°C)']
   },
@@ -685,12 +710,12 @@ $$</p>
   ]
 };
   if (window.echarts !== undefined) {
-    var eChartecharts2926 = echarts.init(document.getElementById('echarts2926'));
-    eChartecharts2926.setOption(optionecharts2926);
-    var eChartecharts2926ResizeHandler = function() {
-      eChartecharts2926.resize();
+    var eChartecharts5107 = echarts.init(document.getElementById('echarts5107'));
+    eChartecharts5107.setOption(optionecharts5107);
+    var eChartecharts5107ResizeHandler = function() {
+      eChartecharts5107.resize();
     };
-    window.addEventListener("resize", eChartecharts2926ResizeHandler);
+    window.addEventListener("resize", eChartecharts5107ResizeHandler);
   }
 </script>
 <blockquote>

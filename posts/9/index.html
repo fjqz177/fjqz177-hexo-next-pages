@@ -143,40 +143,65 @@
 </script>
 <script>
   // 图片模糊渐进加载效果
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     var images = document.querySelectorAll('.post-body img');
-    
-    images.forEach(function(img) {
+
+    images.forEach(function (img) {
       if (img.complete && img.naturalHeight !== 0) {
-        img.classList.add('img-loaded');
+        img
+          .classList
+          .add('img-loaded');
       } else {
-        img.addEventListener('load', function() {
-          this.classList.add('img-loaded');
+        img.addEventListener('load', function () {
+          this
+            .classList
+            .add('img-loaded');
         });
-        img.addEventListener('error', function() {
-          this.classList.add('img-loaded');
+        img.addEventListener('error', function () {
+          this
+            .classList
+            .add('img-loaded');
         });
       }
     });
   });
-  
+
   // 返回顶部按钮液态玻璃鼠标跟踪效果
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     var backToTop = document.querySelector('.back-to-top');
-    
+
     if (backToTop) {
-      backToTop.addEventListener('mousemove', function(e) {
+      backToTop.addEventListener('mousemove', function (e) {
         var rect = this.getBoundingClientRect();
         var x = ((e.clientX - rect.left) / rect.width) * 100;
         var y = ((e.clientY - rect.top) / rect.height) * 100;
-        this.style.setProperty('--mouse-x', x + '%');
-        this.style.setProperty('--mouse-y', y + '%');
+        this
+          .style
+          .setProperty('--mouse-x', x + '%');
+        this
+          .style
+          .setProperty('--mouse-y', y + '%');
       });
-      
-      backToTop.addEventListener('mouseleave', function() {
-        this.style.setProperty('--mouse-x', '30%');
-        this.style.setProperty('--mouse-y', '30%');
+
+      backToTop.addEventListener('mouseleave', function () {
+        this
+          .style
+          .setProperty('--mouse-x', '30%');
+        this
+          .style
+          .setProperty('--mouse-y', '30%');
       });
+    }
+  });
+
+  // 修复搜索框定位问题：将搜索弹出层移到 body 下
+  // 原因：header 有 backdrop-filter 属性，会导致 position: fixed 失效
+  document.addEventListener('DOMContentLoaded', function () {
+    var searchOverlay = document.querySelector('.search-pop-overlay');
+    if (searchOverlay && searchOverlay.parentElement.tagName !== 'BODY') {
+      document
+        .body
+        .appendChild(searchOverlay);
     }
   });
 </script>
