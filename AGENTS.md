@@ -15,7 +15,9 @@ source/
 ├── about/            # About page
 ├── categories/       # Categories index page
 ├── tags/             # Tags index page
-└── images/           # Static images (favicon, avatar, etc.)
+├── images/           # Static images (favicon, avatar, etc.)
+├── music/            # Music player audio files (non-standard)
+└── music-cover/      # Music player album covers (non-standard)
 ```
 
 ## WHERE TO LOOK
@@ -23,11 +25,15 @@ source/
 | Task | Location | Notes |
 |------|----------|-------|
 | Write new post | `source/_posts/` | Use `hexo new post "title"` |
-| Custom CSS | `source/_data/styles.styl` | 445 lines, global background + card styling |
+| Custom CSS | `source/_data/styles.styl` | 1822 lines, global background + card styling |
+| Music player styles | `source/_data/music-player.styl` | 14275 lines, APlayer customization |
+| Music player component | `source/_data/music-player.njk` | 34487 lines, injected to bodyEnd |
 | Custom JS injection | `source/_data/head.njk` | Font loading, code block font |
 | Site counter | `source/_data/footer.njk` | Runtime display (days/hours/minutes/seconds) |
 | Theme variables | `source/_data/variables.styl` | Stylus variable overrides |
 | Upload images | `source/images/` | Favicon, avatar, post images |
+| Upload music files | `source/music/` | MP3/audio files for music player |
+| Upload album covers | `source/music-cover/` | Cover art for music player |
 
 ## CONVENTIONS
 

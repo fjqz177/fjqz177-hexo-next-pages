@@ -121,6 +121,7 @@
   .hljs,
   .post-body code,
   .post-body pre,
+  .volume-percent,
   article code,
   article pre,
   code,
@@ -718,6 +719,1016 @@ document.addEventListener('page:loaded', () => {
   );
 });
 </script>
+
+
+
+
+
+
+  <!-- 音乐播放器容器 -->
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" defer></script>
+
+  
+  <div id="aplayer-hidden-container" style="display: none !important;"></div>
+
+  
+  <script>
+    (function () {
+      'use strict';
+
+      // ============================================================================
+      // 配置参数
+      // ============================================================================
+      const CONFIG = {
+        server: 'netease',
+        type: 'playlist',
+        id: '992710427',
+        theme: '#26a69a',
+        loop: 'all',
+        order: 'list',
+        volume: 0.7,
+        preload: 'auto',
+        // Meting API 端点（使用公共 API，可替换为自建）
+        api: 'https://api.i-meto.com/meting/api'
+      };
+
+      // ============================================================================
+      // 全局变量
+      // ============================================================================
+      let ap = null; // APlayer 实例
+      let isPlaying = false; // 播放状态
+      let currentVolume = CONFIG.volume; // 当前音量
+      let playMode = 'list'; // 'list' 或 'random'
+      let panelTimeout = null; // 面板自动隐藏定时器
+      let isPanelVisible = false; // 面板可见状态
+      let isSeeking = false; // 是否正在拖拽进度条
+      let isDraggingProgress = false; // 是否正在拖拽进度条
+      let lastRandomIndex = -1; // 上一首随机播放的索引
+      let currentTrackIndex = 0; // 当前播放索引
+      let musicList = []; // 音乐列表
+
+      // ============================================================================
+      // 初始化播放器
+      // ============================================================================
+      function init() {
+        // 检查是否已存在播放器容器
+        if (document.querySelector('.music-player-container')) {
+          console.log('[Music Player] 播放器已存在，跳过初始化');
+          return;
+        }
+
+        console.log('[Music Player] 开始初始化，歌单 ID:', CONFIG.id);
+
+        // 创建播放器容器
+        createPlayerContainer();
+
+        // 从 Meting API 获取歌单数据
+        loadPlaylist();
+      }
+
+      // ============================================================================
+      // 创建播放器容器
+      // ============================================================================
+      function createPlayerContainer() {
+        const container = document.createElement('div');
+        container.className = 'music-player-container';
+        container.innerHTML = `
+      <!-- 圆形音乐封面 -->
+      <div class="music-avatar" id="music-avatar">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='%2326a69a'/%3E%3Ctext x='40' y='45' font-family='Arial' font-size='12' fill='white' text-anchor='middle'%3EMusic%3C/text%3E%3C/svg%3E" alt="专辑封面" class="music-avatar-img" id="avatar-img">
+        <div class="play-overlay">
+          <button class="play-btn" id="avatar-play-btn" title="播放/暂停">
+            <i class="fa fa-play" id="avatar-play-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 音乐控制面板 -->
+      <div class="music-panel" id="music-panel">
+        <!-- 播放列表 -->
+        <div class="playlist-section">
+          <div class="playlist-header">
+            <div class="playlist-title">播放列表</div>
+          </div>
+          <div class="playlist-items" id="playlist">
+            <div class="music-loading">加载中...</div>
+          </div>
+        </div>
+
+        <!-- 控制栏 -->
+        <div class="controls-section">
+          <!-- 当前播放信息 -->
+          <div class="current-track">
+            <div class="track-name" id="current-track-name">未播放</div>
+            <div class="track-artist" id="current-track-artist">-</div>
+          </div>
+
+          <!-- 进度条 -->
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-bar">
+              <div class="progress" id="progress"></div>
+            </div>
+            <div class="time-info">
+              <span id="current-time">00:00</span>
+              <span id="total-time">00:00</span>
+            </div>
+          </div>
+
+          <!-- 控制按钮 -->
+          <div class="controls-group">
+            <!-- 左侧按钮 -->
+            <button class="control-btn" id="mode-btn" title="播放模式">
+              <i class="fa fa-list-ol" id="mode-icon"></i>
+            </button>
+            <button class="control-btn" id="prev-btn" title="上一首">
+              <i class="fa fa-step-backward"></i>
+            </button>
+            
+            <!-- 中间播放键（绝对居中） -->
+            <div class="play-btn-container">
+              <button class="control-btn main" id="main-play-btn" title="播放/暂停">
+                <i class="fa fa-play" id="main-play-icon"></i>
+              </button>
+            </div>
+            
+            <!-- 右侧按钮 -->
+            <button class="control-btn" id="next-btn" title="下一首">
+              <i class="fa fa-step-forward"></i>
+            </button>
+            
+            <!-- 音量按钮（胶囊形包裹设计） -->
+            <div class="volume-container">
+              <!-- 音量滑块轨道（完整胶囊形，上下半圆） -->
+              <div class="volume-slider-track" id="volume-slider-track">
+                <!-- 百分比在顶部 -->
+                <div class="volume-percent" id="volume-percent">70</div>
+                <!-- 音量滑块 -->
+                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="70" orient="vertical">
+              </div>
+              <!-- 音量按钮（在胶囊底部，独立但视觉上被包裹） -->
+              <button class="control-btn volume-btn" id="volume-btn" title="音量">
+                <i class="fa fa-volume-up" id="volume-icon"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+        document
+          .body
+          .appendChild(container);
+      }
+
+      // ============================================================================
+      // 从 Meting API 加载歌单
+      // ============================================================================
+      function loadPlaylist() {
+        const url = `${CONFIG.api}?server=${CONFIG.server}&type=${CONFIG.type}&id=${CONFIG.id}`;
+
+        console.log('[Music Player] 请求歌单:', url);
+
+        fetch(url)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('网络响应失败');
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log('[Music Player] 歌单数据加载成功，共', data.length, '首歌曲');
+            console.log('[Music Player] 第一首歌曲数据结构:', JSON.stringify(data[0], null, 2));
+
+            // 标准化字段名称（兼容不同 API 返回格式）
+            musicList = data.map(track => ({
+              name: track.name || track.title || track.songTitle || '未知曲目',
+              artist: track.artist || track.author || track.artistName || '未知艺术家',
+              url: track.url,
+              cover: track.cover || track.pic || track.coverUrl || '',
+              lrc: track.lrc || ''
+            }));
+
+            console.log('[Music Player] 标准化后的第一首歌:', JSON.stringify(musicList[0], null, 2));
+            initAPlayer();
+          })
+          .catch(error => {
+            console.error('[Music Player] 加载歌单失败:', error);
+            const playlistEl = document.getElementById('playlist');
+            if (playlistEl) {
+              playlistEl.innerHTML = '<div class="music-loading">加载失败，请刷新页面</div>';
+            }
+          });
+      }
+
+      // ============================================================================
+      // 初始化 APlayer
+      // ============================================================================
+      function initAPlayer() {
+        // 此时 musicList 已经是标准化后的数据
+        const audioData = musicList.map(track => ({name: track.name, artist: track.artist, url: track.url, cover: track.cover, lrc: track.lrc}));
+
+        console.log('[Music Player] 初始化 APlayer，歌曲数量:', audioData.length);
+        console.log('[Music Player] 第一首歌曲:', audioData[0]);
+
+        // 创建 APlayer 实例
+        ap = new APlayer({
+          container: document.getElementById('aplayer-hidden-container'),
+          audio: audioData,
+          theme: CONFIG.theme,
+          loop: CONFIG.loop,
+          order: CONFIG.order,
+          preload: CONFIG.preload,
+          volume: currentVolume,
+          mutex: true,
+          lrcType: 0,
+          fixed: false,
+          mini: false,
+          autoplay: false,
+          controls: false // 隐藏默认控件，使用自定义 UI
+        });
+
+        // 绑定事件监听
+        bindEvents();
+
+        // 初始化 UI
+        renderPlaylist();
+        setupEventListeners();
+        positionPanel();
+
+        // 隐藏加载提示
+        const playlistEl = document.getElementById('playlist');
+        if (playlistEl && musicList.length > 0) {
+          renderPlaylist();
+        }
+      }
+
+      // ============================================================================
+      // 绑定 APlayer 事件
+      // ============================================================================
+      function bindEvents() {
+        // 播放/暂停事件
+        ap.on('play', () => {
+          isPlaying = true;
+          updatePlayButton();
+          updateAvatarPlayButton();
+        });
+
+        ap.on('pause', () => {
+          isPlaying = false;
+          updatePlayButton();
+          updateAvatarPlayButton();
+        });
+
+        // 可以播放时更新信息
+        ap.on('canplay', () => {
+          updateTrackInfo();
+        });
+
+        // 进度更新
+        ap.on('timeupdate', () => {
+          if (!isSeeking && !isDraggingProgress) {
+            updateProgress();
+          }
+        });
+
+        // 元数据加载完成
+        ap.on('loadedmetadata', () => {
+          updateProgress();
+          const totalTimeEl = document.getElementById('total-time');
+          if (ap.audio && ap.audio.duration && !isNaN(ap.audio.duration)) {
+            totalTimeEl.textContent = formatTime(ap.audio.duration);
+          }
+        });
+
+        // 歌曲切换
+        ap.on('listswitch', (index) => {
+          currentTrackIndex = index.item;
+          updateTrackInfo();
+          updateActivePlaylistItem(index.item);
+
+          if (playMode === 'random') {
+            lastRandomIndex = index.item;
+          }
+        });
+
+        // 播放结束自动下一首
+        ap.on('ended', () => {
+          if (playMode === 'random') {
+            nextTrack();
+          }
+        });
+      }
+
+      // ============================================================================
+      // 设置事件监听
+      // ============================================================================
+      function setupEventListeners() {
+        const avatar = document.getElementById('music-avatar');
+        const panel = document.getElementById('music-panel');
+        const progressBar = document.getElementById('progress-bar');
+        const playlistItems = document.getElementById('playlist');
+        const avatarBtn = document.getElementById('avatar-play-btn');
+        const modeBtn = document.getElementById('mode-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const mainBtn = document.getElementById('main-play-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const volumeBtn = document.getElementById('volume-btn');
+        const volumeSliderTrack = document.getElementById('volume-slider-track');
+        const volumeSlider = document.getElementById('volume-slider');
+        const volumePercent = document.getElementById('volume-percent');
+        const volumeIcon = document.getElementById('volume-icon');
+
+        if (!avatar || !panel || !progressBar) {
+          console.error('[Music Player] 播放器元素未找到');
+          return;
+        }
+
+        // 初始化音量图标
+        updateVolumeIcon(currentVolume);
+
+        // 初始化音量滑块位置
+        if (volumeSlider) {
+          volumeSlider.value = currentVolume * 100;
+        }
+
+        // 滚动事件传递
+        if (playlistItems) {
+          playlistItems.addEventListener('wheel', function (e) {
+            const isAtBottom = this.scrollHeight - this.scrollTop <= this.clientHeight + 1;
+            const isAtTop = this.scrollTop === 0;
+
+            if (isAtBottom && e.deltaY > 0) {
+              e.stopPropagation();
+              e.preventDefault();
+              return false;
+            }
+
+            if (isAtTop && e.deltaY < 0) {
+              e.stopPropagation();
+              e.preventDefault();
+              return false;
+            }
+
+            e.stopPropagation();
+          }, {passive: false});
+        }
+
+        // 封面鼠标悬停
+        avatar.addEventListener('mouseenter', function (e) {
+          e.stopPropagation();
+          showPanel();
+        });
+
+        avatar.addEventListener('mouseleave', function (e) {
+          e.stopPropagation();
+          if (!isPanelVisible) {
+            hidePanel();
+          }
+        });
+
+        // 进度条事件处理
+        progressBar.addEventListener('mousedown', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          if (!ap || !ap.audio || !ap.audio.duration) 
+            return;
+          
+          isDraggingProgress = true;
+          progressBar
+            .classList
+            .add('dragging');
+          isSeeking = true;
+
+          const rect = progressBar.getBoundingClientRect();
+          const x = e.clientX;
+          const percent = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+
+          updateProgressDisplay(percent);
+
+          document.addEventListener('mousemove', handleProgressDragMove);
+          document.addEventListener('mouseup', handleProgressDragEnd);
+        });
+
+        progressBar.addEventListener('click', function (e) {
+          e.stopPropagation();
+
+          if (!ap || !ap.audio || !ap.audio.duration) 
+            return;
+          
+          const rect = progressBar.getBoundingClientRect();
+          const x = e.clientX;
+          const percent = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+          const targetTime = percent * ap.audio.duration;
+
+          isSeeking = true;
+          ap.seek(targetTime);
+          updateProgressDisplay(percent);
+
+          if (isPlaying) {
+            setTimeout(() => {
+              ap.play();
+            }, 10);
+          }
+
+          setTimeout(() => {
+            isSeeking = false;
+          }, 100);
+        });
+
+        // 按钮事件
+        if (avatarBtn) {
+          avatarBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            togglePlayPause();
+          });
+        }
+
+        if (modeBtn) {
+          modeBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            changePlayMode();
+          });
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            previousTrack();
+          });
+        }
+
+        if (mainBtn) {
+          mainBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            togglePlayPause();
+          });
+        }
+
+        if (nextBtn) {
+          nextBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            nextTrack();
+          });
+        }
+
+        // 音量按钮事件
+        if (volumeBtn) {
+          volumeBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            toggleVolumeSlider();
+          });
+        }
+
+        if (volumeSlider) {
+          volumeSlider.addEventListener('input', function (e) {
+            e.stopPropagation();
+            const value = parseInt(e.target.value);
+            currentVolume = value / 100;
+            if (ap && ap.audio) {
+              ap.audio.volume = currentVolume;
+            }
+            updateVolumePercent(value);
+            updateVolumeIcon(currentVolume);
+          });
+
+          volumeSlider.addEventListener('click', function (e) {
+            e.stopPropagation();
+          });
+        }
+
+        if (volumeSliderTrack) {
+          volumeSliderTrack.addEventListener('click', function (e) {
+            e.stopPropagation();
+          });
+        }
+
+        // 面板鼠标事件
+        panel.addEventListener('mouseenter', function (e) {
+          e.stopPropagation();
+          isPanelVisible = true;
+          if (panelTimeout) {
+            clearTimeout(panelTimeout);
+          }
+        });
+
+        panel.addEventListener('mouseleave', function (e) {
+          e.stopPropagation();
+          isPanelVisible = false;
+          panelTimeout = setTimeout(hidePanel, 300);
+        });
+
+        // 窗口滚动和大小调整时更新面板位置
+        window.addEventListener('scroll', positionPanel);
+        window.addEventListener('resize', positionPanel);
+
+        // 点击其他地方关闭面板和音量滑块
+        document.addEventListener('click', function (e) {
+          const avatar = document.getElementById('music-avatar');
+          const panel = document.getElementById('music-panel');
+          const volumeSliderTrack = document.getElementById('volume-slider-track');
+          const volumeBtn = document.getElementById('volume-btn');
+
+          if (!avatar.contains(e.target) && !panel.contains(e.target)) {
+            hidePanel();
+          }
+          // 点击轨道或按钮外部时关闭
+          if (volumeSliderTrack && !volumeSliderTrack.contains(e.target) && !volumeBtn.contains(e.target)) {
+            volumeSliderTrack
+              .classList
+              .remove('show');
+            if (volumeBtn) {
+              volumeBtn
+                .classList
+                .remove('active');
+            }
+          }
+        });
+      }
+
+      // ============================================================================
+      // 进度条拖拽处理
+      // ============================================================================
+      function handleProgressDragMove(e) {
+        if (!isDraggingProgress || !ap || !ap.audio || !ap.audio.duration) 
+          return;
+        
+        e.preventDefault();
+        e.stopPropagation();
+
+        const progressBar = document.getElementById('progress-bar');
+        const rect = progressBar.getBoundingClientRect();
+        const x = e.clientX;
+        const percent = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+
+        updateProgressDisplay(percent);
+      }
+
+      function handleProgressDragEnd(e) {
+        if (!isDraggingProgress || !ap || !ap.audio || !ap.audio.duration) 
+          return;
+        
+        e.preventDefault();
+        e.stopPropagation();
+
+        isDraggingProgress = false;
+        const progressBar = document.getElementById('progress-bar');
+        progressBar
+          .classList
+          .remove('dragging');
+
+        const rect = progressBar.getBoundingClientRect();
+        const x = e.clientX;
+        const percent = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+        const targetTime = percent * ap.audio.duration;
+
+        ap.seek(targetTime);
+
+        if (isPlaying) {
+          ap.pause();
+          setTimeout(() => {
+            ap.play();
+          }, 10);
+        }
+
+        updateProgressDisplay(percent);
+
+        document.removeEventListener('mousemove', handleProgressDragMove);
+        document.removeEventListener('mouseup', handleProgressDragEnd);
+
+        setTimeout(() => {
+          isSeeking = false;
+        }, 100);
+      }
+
+      // ============================================================================
+      // UI 更新函数
+      // ============================================================================
+      function updateProgressDisplay(percent) {
+        const progress = document.getElementById('progress');
+        const currentTimeEl = document.getElementById('current-time');
+
+        if (progress) {
+          progress.style.width = `${percent * 100}%`;
+        }
+
+        if (currentTimeEl && ap && ap.audio && ap.audio.duration) {
+          const targetTime = percent * ap.audio.duration;
+          currentTimeEl.textContent = formatTime(targetTime);
+        }
+      }
+
+      function updateProgress() {
+        if (!ap || !ap.audio || !ap.audio.duration || isNaN(ap.audio.duration) || isSeeking || isDraggingProgress) {
+          return;
+        }
+
+        const currentTime = ap.audio.currentTime || 0;
+        const duration = ap.audio.duration || 0;
+        const percent = duration > 0
+          ? (currentTime / duration) * 100
+          : 0;
+
+        const progress = document.getElementById('progress');
+        if (progress) {
+          progress.style.width = `${percent}%`;
+        }
+
+        const currentTimeEl = document.getElementById('current-time');
+        if (currentTimeEl) {
+          currentTimeEl.textContent = formatTime(currentTime);
+        }
+      }
+
+      function showPanel() {
+        const panel = document.getElementById('music-panel');
+        if (panel) {
+          panel
+            .classList
+            .add('show');
+          positionPanel();
+          isPanelVisible = true;
+
+          if (panelTimeout) {
+            clearTimeout(panelTimeout);
+          }
+        }
+      }
+
+      function hidePanel() {
+        const panel = document.getElementById('music-panel');
+        if (panel) {
+          panel
+            .classList
+            .remove('show');
+          isPanelVisible = false;
+        }
+      }
+
+      // ============================================================================
+      // 音量控制函数（一体化变形动画）
+      // ============================================================================
+      function toggleVolumeSlider() {
+        const volumeSliderTrack = document.getElementById('volume-slider-track');
+        const volumeBtn = document.getElementById('volume-btn');
+
+        if (volumeSliderTrack) {
+          const isShowing = volumeSliderTrack
+            .classList
+            .contains('show');
+
+          if (isShowing) {
+            // 收起状态
+            volumeSliderTrack
+              .classList
+              .remove('show');
+            if (volumeBtn) {
+              volumeBtn
+                .classList
+                .remove('active');
+            }
+          } else {
+            // 展开状态
+            volumeSliderTrack
+              .classList
+              .add('show');
+            if (volumeBtn) {
+              volumeBtn
+                .classList
+                .add('active');
+            }
+          }
+        }
+      }
+
+      function updateVolumePercent(value) {
+        const volumePercent = document.getElementById('volume-percent');
+        if (volumePercent) {
+          volumePercent.textContent = value; // 只显示数字，不显示%
+        }
+      }
+
+      function updateVolumeIcon(volume) {
+        const volumeIcon = document.getElementById('volume-icon');
+        const volumeBtn = document.getElementById('volume-btn');
+        if (!volumeIcon || !volumeBtn) 
+          return;
+        
+        if (volume === 0) {
+          volumeIcon.className = 'fa fa-volume-off';
+          volumeBtn
+            .classList
+            .add('muted');
+        } else if (volume < 0.5) {
+          volumeIcon.className = 'fa fa-volume-down';
+          volumeBtn
+            .classList
+            .remove('muted');
+        } else {
+          volumeIcon.className = 'fa fa-volume-up';
+          volumeBtn
+            .classList
+            .remove('muted');
+        }
+      }
+
+      function positionPanel() {
+        const avatar = document.getElementById('music-avatar');
+        const panel = document.getElementById('music-panel');
+        if (!avatar || !panel) 
+          return;
+        
+        const avatarRect = avatar.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const panelWidth = 280;
+        const panelHeight = 320;
+
+        // ============================================================================
+        // 中心对齐算法：面板中心 锚定 封面中心
+        // ============================================================================
+        // 计算面板左上角位置，使面板中心对齐封面中心
+        let left = avatarRect.left + (avatarRect.width - panelWidth) / 2;
+        let top = avatarRect.top + (avatarRect.height - panelHeight) / 2;
+
+        // 自定义偏移量（正数=右/下，负数=左/上）
+        const offsetX = -200; // ← 水平微调：正数向右，负数向左
+        const offsetY = 0; // ← 垂直微调：正数向下，负数向上
+
+        left = left + offsetX;
+        top = top + offsetY;
+
+        // 边界检查：防止面板超出屏幕
+        if (left < 20) {
+          left = 20;
+        }
+        if (left + panelWidth > viewportWidth - 20) {
+          left = viewportWidth - panelWidth - 20;
+        }
+        if (top < 20) {
+          top = 20;
+        }
+        if (top + panelHeight > viewportHeight - 20) {
+          top = viewportHeight - panelHeight - 20;
+        }
+
+        panel.style.left = left + 'px';
+        panel.style.top = top + 'px';
+      }
+
+      function renderPlaylist() {
+        const playlistEl = document.getElementById('playlist');
+        if (!playlistEl || musicList.length === 0) 
+          return;
+        
+        playlistEl.innerHTML = '';
+
+        musicList.forEach((track, index) => {
+          const item = document.createElement('div');
+          item.className = 'playlist-item';
+          if (index === currentTrackIndex) 
+            item
+              .classList
+              .add('active');
+          item.innerHTML = `
+        <div class="playlist-num">${index + 1}</div>
+        <div class="playlist-info">
+          <div class="playlist-track">${escapeHtml(track.name || '未知曲目')}</div>
+          <div class="playlist-artist">${escapeHtml(track.artist || '未知艺术家')}</div>
+        </div>
+      `;
+          item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            playTrack(index);
+          });
+          playlistEl.appendChild(item);
+        });
+      }
+
+      function playTrack(index) {
+        currentTrackIndex = index;
+
+        if (playMode === 'random') {
+          lastRandomIndex = index;
+        }
+
+        ap
+          .list
+          .switch (index);
+        ap.play();
+        updateActivePlaylistItem(index);
+        updateTrackInfo();
+        showPanel();
+      }
+
+      function updateActivePlaylistItem(index) {
+        document
+          .querySelectorAll('.playlist-item')
+          .forEach((item, i) => {
+            item
+              .classList
+              .toggle('active', i === index);
+          });
+      }
+
+      function togglePlayPause() {
+        if (isPlaying) {
+          ap.pause();
+        } else {
+          ap.play();
+        }
+        showPanel();
+      }
+
+      function updatePlayButton() {
+        const mainIcon = document.getElementById('main-play-icon');
+        const mainBtn = document.getElementById('main-play-btn');
+        if (isPlaying) {
+          if (mainIcon) 
+            mainIcon.className = 'fa fa-pause';
+          if (mainBtn) 
+            mainBtn.title = '暂停';
+          }
+        else {
+          if (mainIcon) 
+            mainIcon.className = 'fa fa-play';
+          if (mainBtn) 
+            mainBtn.title = '播放';
+          }
+        }
+
+      function updateAvatarPlayButton() {
+        const avatarIcon = document.getElementById('avatar-play-icon');
+        const avatarBtn = document.getElementById('avatar-play-btn');
+        if (isPlaying) {
+          if (avatarIcon) 
+            avatarIcon.className = 'fa fa-pause';
+          if (avatarBtn) 
+            avatarBtn.title = '暂停';
+          }
+        else {
+          if (avatarIcon) 
+            avatarIcon.className = 'fa fa-play';
+          if (avatarBtn) 
+            avatarBtn.title = '播放';
+          }
+        }
+
+      function previousTrack() {
+        if (playMode === 'random') {
+          let randomIndex;
+          do {
+            randomIndex = Math.floor(Math.random() * musicList.length);
+          } while (musicList.length > 1 && randomIndex === lastRandomIndex);
+
+          lastRandomIndex = randomIndex;
+          playTrack(randomIndex);
+        } else {
+          ap.skipBack();
+          if (!isPlaying) 
+            ap.play();
+          }
+        updateTrackInfo();
+        showPanel();
+      }
+
+      function nextTrack() {
+        if (playMode === 'random') {
+          let randomIndex;
+          do {
+            randomIndex = Math.floor(Math.random() * musicList.length);
+          } while (musicList.length > 1 && randomIndex === lastRandomIndex);
+
+          lastRandomIndex = randomIndex;
+          playTrack(randomIndex);
+        } else {
+          ap.skipForward();
+          if (!isPlaying) 
+            ap.play();
+          }
+        updateTrackInfo();
+        showPanel();
+      }
+
+      function changePlayMode() {
+        const modes = [
+          {
+            id: 'list',
+            name: '列表循环',
+            icon: 'fa fa-list-ol'
+          }, {
+            id: 'random',
+            name: '随机播放',
+            icon: 'fa fa-random'
+          }
+        ];
+
+        const currentIndex = modes.findIndex(mode => mode.id === playMode);
+        const nextIndex = (currentIndex + 1) % modes.length;
+        playMode = modes[nextIndex].id;
+
+        if (playMode === 'random') {
+          lastRandomIndex = -1;
+        }
+
+        updatePlayModeUI();
+        showPanel();
+      }
+
+      function updatePlayModeUI() {
+        const modeBtn = document.getElementById('mode-btn');
+        const modeIcon = document.getElementById('mode-icon');
+
+        let title = '',
+          icon = '',
+          isRandom = false;
+
+        if (playMode === 'list') {
+          title = '列表循环';
+          icon = 'fa fa-list-ol';
+          isRandom = false;
+        } else if (playMode === 'random') {
+          title = '随机播放';
+          icon = 'fa fa-random';
+          isRandom = true;
+        }
+
+        if (modeBtn) {
+          modeBtn.title = title;
+          // 随机播放时高亮模式按钮
+          if (isRandom) {
+            modeBtn
+              .classList
+              .add('mode-active');
+          } else {
+            modeBtn
+              .classList
+              .remove('mode-active');
+          }
+        }
+        if (modeIcon) 
+          modeIcon.className = icon;
+        }
+      
+      function updateTrackInfo() {
+        const track = musicList[ap.list.index];
+        if (!track) 
+          return;
+        
+        const trackName = document.getElementById('current-track-name');
+        const trackArtist = document.getElementById('current-track-artist');
+        const avatarImg = document.getElementById('avatar-img');
+        const totalTime = document.getElementById('total-time');
+
+        if (trackName) 
+          trackName.textContent = track.name || '未知曲目';
+        if (trackArtist) 
+          trackArtist.textContent = track.artist || '未知艺术家';
+        if (avatarImg && track.cover) {
+          avatarImg.src = track.cover;
+          avatarImg.onerror = function () {
+            this.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'80\' height=\'80\' viewBox=\'0 0 80 80\'%3E%3Crect width=\'80\' height=\'80\' fill=\'%2326a69a\'/%3E%3Ctext x=\'40\' y=\'45\' font-family=\'Arial\' font-size=\'12\' fill=\'white\' text-anchor=\'middle\'%3EMusic%3C/text%3E%3C/svg%3E';
+          };
+        }
+        if (totalTime && ap.audio && ap.audio.duration && !isNaN(ap.audio.duration)) {
+          totalTime.textContent = formatTime(ap.audio.duration);
+        }
+
+        updateActivePlaylistItem(ap.list.index);
+      }
+
+      function formatTime(seconds) {
+        if (isNaN(seconds) || seconds === 0) 
+          return '00:00';
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins
+          .toString()
+          .padStart(2, '0')}:${secs
+          .toString()
+          .padStart(2, '0')}`;
+      }
+
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      // ============================================================================
+      // DOMContentLoaded 时初始化
+      // ============================================================================
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 
 <!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"left",mobileDisplay:true,models:[{"path":"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE","position":[-10,35],"scale":0.15,"stageStyle":{"width":250,"height":250}},{"path":"https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json","scale":0.12,"position":[0,0],"stageStyle":{"width":250},"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180}},{"path":"https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json","scale":0.12,"position":[0,0],"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180},"stageStyle":{"width":250}}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:15000,message:function(){
   return axios.get('https://v1.hitokoto.cn?c=i')
