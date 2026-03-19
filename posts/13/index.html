@@ -294,7 +294,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">WSL（Windows Subsystem for Linux）能让你在Windows上直接运行Linux环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">这篇文章旨在速成WSL的安装与使用，以及关键的无损迁移到其他硬盘教程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">1. 安装WSL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">2. 迁移WSL到其他硬盘</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WSL%EF%BC%88Windows-Subsystem-for-Linux%EF%BC%89%E8%83%BD%E8%AE%A9%E4%BD%A0%E5%9C%A8Windows%E4%B8%8A%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8CLinux%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">WSL（Windows Subsystem for Linux）能让你在Windows上直接运行Linux环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E7%AF%87%E6%96%87%E7%AB%A0%E6%97%A8%E5%9C%A8%E9%80%9F%E6%88%90WSL%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%85%B3%E9%94%AE%E7%9A%84%E6%97%A0%E6%8D%9F%E8%BF%81%E7%A7%BB%E5%88%B0%E5%85%B6%E4%BB%96%E7%A1%AC%E7%9B%98%E6%95%99%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">这篇文章旨在速成WSL的安装与使用，以及关键的无损迁移到其他硬盘教程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85WSL"><span class="nav-number">3.</span> <span class="nav-text">1. 安装WSL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E8%BF%81%E7%A7%BBWSL%E5%88%B0%E5%85%B6%E4%BB%96%E7%A1%AC%E7%9B%98"><span class="nav-number">4.</span> <span class="nav-text">2. 迁移WSL到其他硬盘</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -454,10 +454,10 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1>WSL（Windows Subsystem for Linux）能让你在Windows上直接运行Linux环境</h1>
-<h1>这篇文章旨在速成WSL的安装与使用，以及关键的无损迁移到其他硬盘教程</h1>
+    <div class="post-body" itemprop="articleBody"><h1 id="WSL（Windows-Subsystem-for-Linux）能让你在Windows上直接运行Linux环境">WSL（Windows Subsystem for Linux）能让你在Windows上直接运行Linux环境</h1>
+<h1 id="这篇文章旨在速成WSL的安装与使用，以及关键的无损迁移到其他硬盘教程">这篇文章旨在速成WSL的安装与使用，以及关键的无损迁移到其他硬盘教程</h1>
 <span id="more"></span>
-<h1>1. 安装WSL</h1>
+<h1 id="1-安装WSL">1. 安装WSL</h1>
 <p>桌面左下角<strong>搜索框</strong>搜索<strong>控制面板</strong>，打开<strong>控制面板</strong>，点击“<strong>程序</strong>”，然后点击“<strong>启用或关闭Windows功能</strong>”，在弹出的窗口中找到<strong>勾选</strong></p>
 <ul>
 <li><strong>Hyper-V</strong></li>
@@ -479,7 +479,7 @@
 <p>可以看到当前安装的WSL发行版及其版本信息以及运行状态</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> wsl <span class="literal">-l</span> <span class="literal">-v</span></span><br><span class="line">  NAME              STATE           VERSION</span><br><span class="line">* Ubuntu<span class="literal">-24</span>.<span class="number">04</span>      Stopped         <span class="number">2</span></span><br><span class="line">  docker<span class="literal">-desktop</span>    Stopped         <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>这里的*表示当前默认启动的发行版（docker是我自己安装的，不用管）</p>
-<h1>2. 迁移WSL到其他硬盘</h1>
+<h1 id="2-迁移WSL到其他硬盘">2. 迁移WSL到其他硬盘</h1>
 <p>此时我们的WSL是安装在C盘的，很容易就把C盘空间占满，如果想迁移到其他硬盘，可以按照以下步骤操作</p>
 
     </div>
@@ -1651,7 +1651,7 @@ document.addEventListener('page:loaded', () => {
     })();
   </script>
 
-<!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"left",mobileDisplay:true,models:[{"path":"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE","position":[-10,35],"scale":0.15,"stageStyle":{"width":250,"height":250}},{"path":"https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json","scale":0.12,"position":[0,0],"stageStyle":{"width":250},"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180}},{"path":"https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json","scale":0.12,"position":[0,0],"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180},"stageStyle":{"width":250}}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:15000,message:function(){
+<!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"left",mobileDisplay:false,models:[{"path":"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json","mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE","position":[-10,35],"scale":0.15,"stageStyle":{"width":250,"height":250}},{"path":"https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json","scale":0.12,"position":[0,0],"stageStyle":{"width":250},"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180}},{"path":"https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json","scale":0.12,"position":[0,0],"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180},"stageStyle":{"width":250}}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:15000,message:function(){
   return axios.get('https://v1.hitokoto.cn?c=i')
     .then(function (response) {
       return response.data.hitokoto ;

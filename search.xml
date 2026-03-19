@@ -1,12 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Markdown测试</title>
+    <url>/fjqz177-hexo-next-pages/posts/6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>做一个Markdown页面渲染测试</p>
+<span id="more"></span>
+<h1 id="欢迎使用-Arya-在线-Markdown-编辑器">欢迎使用 <code>Arya</code> 在线 Markdown 编辑器</h1>
+<p><a href="https://markdown.lovejade.cn/?utm_source=markdown.lovejade.cn">Arya</a>，是一款基于 <code>Vue</code>、<code>Vditor</code>，为未来而构建的在线 Markdown 编辑器；轻量且强大：内置粘贴 HTML 自动转换为 Markdown，支持流程图、甘特图、时序图、任务列表，可导出携带样式的图片、PDF、微信公众号特制的 HTML 等等。</p>
+<hr>
+<h2 id="如何使用">如何使用</h2>
+<p><strong>微注</strong>：清空目前这份默认文档，即处于可使用态。<a href="https://markdown.lovejade.cn/?utm_source=markdown.lovejade.cn">Arya</a> 另一大优点在于：编辑内容只会在您本地进行保存，不会上传您的数据至服务器，<strong>绝不窥测用户个人隐私，可放心使用</strong>；Github 源码：<a href="https://github.com/nicejade/markdown-online-editor">markdown-online-editor</a>，部分功能仍在开发🚧，敬请期待。</p>
+<p>默认为<a href="https://hacpai.com/article/1577370404903?utm_source=github.com">所见即所得</a>模式，可通过 <code>⌘-⇧-M</code>（<code>Ctrl-⇧-M</code>）进行切换；或通过以下方式：</p>
+<ul>
+<li>所见即所得：<code>⌘-⌥-7</code>（<code>Ctrl-alt-7</code>）；</li>
+<li>即时渲染：<code>⌘-⌥-8</code>（<code>Ctrl-alt-8</code>）；</li>
+<li>分屏渲染：<code>⌘-⌥-9</code>（<code>Ctrl-alt-9</code>）；</li>
+</ul>
+<h3 id="PPT-预览">PPT 预览</h3>
+<p>如果您用作 <code>PPT</code> 预览（入口在 <code>设置</code>中），需要注意，这里暂还不能支持各种图表的渲染；您可以使用 <code>---</code> 来定义水平方向上幻灯片，用 <code>--</code> 来定义垂直幻灯片；更多设定可以参见 <a href="https://github.com/hakimel/reveal.js#table-of-contents">RevealJs 文档</a>。</p>
+<hr>
+<h2 id="什么是-Markdown">什么是 Markdown</h2>
+<p><a href="https://nicelinks.site/tags/Markdown/?utm_source=markdown.lovejade.cn">Markdown</a> 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号，以最小的输入代价，生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，<strong>粗体</strong>、<em>斜体</em> 或者<a href="https://vue-cli3.lovejade.cn/explore/">超文本链接</a>，更棒的是，它还可以：</p>
+<hr>
+<h3 id="1-制作待办事宜-Todo-列表">1. 制作待办事宜 <code>Todo</code> 列表</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🎉 通常<code>Markdown</code> 解析器自带的基本功能；</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🍀 支持<strong>流程图</strong>、<strong>甘特图</strong>、<strong>时序图</strong>、<strong>任务列表</strong>；</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🏁 支持粘贴 HTML 自动转换为 Markdown；</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 💃🏻 支持插入原生 Emoji、设置常用表情列表；</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🚑 支持编辑内容保存<strong>本地存储</strong>，防止意外丢失；</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 📝 支持<strong>实时预览</strong>，主窗口大小拖拽，字符计数；</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🛠 支持常用快捷键(<strong>Tab</strong>)，及代码块添加复制</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> ✨ 支持<strong>导出</strong>携带样式的 PDF、PNG、JPEG 等；</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> ✨ 升级 Vditor，新增对<code>echarts</code> 图表的支持；</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 👏 支持检查并格式化 Markdown 语法，使其专业；</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🦑 支持五线谱、及<a href="https://github.com/b3log/vditor/issues/117?utm_source=hacpai.com#issuecomment-526986052">部分站点、视频、音频解析</a>；</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🌟 增加对<strong>所见即所得</strong>编辑模式的支持(<code>⌘-⇧-M</code>)；</li>
+</ul>
+<hr>
+<h3 id="2-书写一个质能守恒公式-LaTeX">2. 书写一个质能守恒公式[^LaTeX]</h3>
+<p>$$<br>
+E=mc^2<br>
+$$</p>
+<hr>
+<h3 id="3-高亮一段代码-code">3. 高亮一段代码[^code]</h3>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 给页面里所有的 DOM 元素添加一个 1px 的描边（outline）;</span></span><br><span class="line">[].<span class="property">forEach</span>.<span class="title function_">call</span>($$(<span class="string">&quot;*&quot;</span>),<span class="keyword">function</span>(<span class="params">a</span>)&#123;</span><br><span class="line">  a.<span class="property">style</span>.<span class="property">outline</span>=<span class="string">&quot;1px solid #&quot;</span>+(~~(<span class="title class_">Math</span>.<span class="title function_">random</span>()*(<span class="number">1</span>&lt;&lt;<span class="number">24</span>))).<span class="title function_">toString</span>(<span class="number">16</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="4-高效绘制流程图">4. 高效绘制<a href="https://github.com/knsv/mermaid#flowchart">流程图</a></h3>
+<pre class="mermaid">graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;</pre>
+<h3 id="5-高效绘制序列图">5. 高效绘制<a href="https://github.com/knsv/mermaid#sequence-diagram">序列图</a></h3>
+<pre class="mermaid">sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->John: Hello John, how are you?
+    loop Healthcheck
+        John->John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail...
+    John-->Alice: Great!
+    John->Bob: How about you?
+    Bob-->John: Jolly good!</pre>
+<h3 id="6-高效绘制甘特图">6. 高效绘制<a href="https://github.com/knsv/mermaid#gantt-diagram">甘特图</a></h3>
+<blockquote>
+<p><strong>甘特图</strong>内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。</p>
+</blockquote>
+<pre class="mermaid">gantt
+    title 项目开发流程
+    section 项目确定
+        需求分析       :a1, 2019-06-22, 3d
+        可行性报告     :after a1, 5d
+        概念验证       : 5d
+    section 项目实施
+        概要设计      :2019-07-05  , 5d
+        详细设计      :2019-07-08, 10d
+        编码          :2019-07-15, 10d
+        测试          :2019-07-22, 5d
+    section 发布验收
+        发布: 2d
+        验收: 3d</pre>
+<h3 id="8-绘制表格">8. 绘制表格</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">作品名称</th>
+<th style="text-align:left">在线地址</th>
+<th style="text-align:center">上线日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">倾城之链</td>
+<td style="text-align:left"><a href="https://nicelinks.site/??utm_source=markdown.lovejade.cn">https://nicelinks.site</a></td>
+<td style="text-align:center">2017-09-20</td>
+</tr>
+<tr>
+<td style="text-align:left">晚晴幽草轩</td>
+<td style="text-align:left"><a href="https://jeffjade.com/??utm_source=markdown.lovejade.cn">https://jeffjade.com</a></td>
+<td style="text-align:center">2014-09-20</td>
+</tr>
+<tr>
+<td style="text-align:left">静轩之别苑</td>
+<td style="text-align:left"><a href="http://quickapp.lovejade.cn/??utm_source=markdown.lovejade.cn">http://quickapp.lovejade.cn</a></td>
+<td style="text-align:center">2019-01-12</td>
+</tr>
+</tbody>
+</table>
+<h3 id="9-更详细语法说明">9. 更详细语法说明</h3>
+<h3 id="想要查看更详细的语法说明，可以参考这份-Markdown-资源列表，涵盖入门至进阶教程，以及资源、平台等信息，能让您对她有更深的认知。">想要查看更详细的语法说明，可以参考这份 <a href="https://github.com/nicejade/nice-front-end-tutorial/blob/master/tutorial/markdown-tutorial.md">Markdown 资源列表</a>，涵盖入门至进阶教程，以及资源、平台等信息，能让您对她有更深的认知。</h3>
+<p>总而言之，不同于其它<em>所见即所得</em>的编辑器：你只需使用键盘专注于书写文本内容，就可以生成印刷级的排版格式，省却在键盘和工具栏之间来回切换，调整内容和格式的麻烦。<strong>Markdown 在流畅的书写和印刷级的阅读体验之间找到了平衡。</strong> 目前它已经成为世界上最大的技术分享网站 <code>GitHub</code> 和 技术问答网站 <code>StackOverFlow</code> 的御用书写格式，而且越发流行，正在在向各行业渗透。</p>
+<p>最新更新于 2019.08.21</p>
+<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';	mermaid.initialize({startOnLoad: true, flowchart: {curve: 'linear'}}); </script>]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown渲染测试3</title>
     <url>/fjqz177-hexo-next-pages/posts/12/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>Markdown页面渲染测试</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Markdown页面渲染测试">Markdown页面渲染测试</h1>
 <p><img src="https://infishow.ideamake.cn/privately_pc/modules/content/DSC02060_HDR.avif" alt=""></p>
 <span id="more"></span>
-<h1>欢迎使用 <code>Arya</code> 在线 Markdown 编辑器</h1>
+<h1 id="欢迎使用-Arya-在线-Markdown-编辑器">欢迎使用 <code>Arya</code> 在线 Markdown 编辑器</h1>
 <p><a href="https://markdown.lovejade.cn/?ref=markdown.lovejade.cn">Arya</a>，是一款基于 <code>Vue</code>、<code>Vditor</code>，为未来而构建的在线 Markdown 编辑器；轻量且强大：内置粘贴 HTML 自动转换为 Markdown，支持流程图、甘特图、时序图、任务列表，可导出携带样式的图片、PDF、微信公众号特制的 HTML 等等。</p>
 <hr>
 <h2 id="如何使用">如何使用</h2>
@@ -113,13 +233,13 @@ $$</p>
     验收: 3d</pre>
 <h3 id="7-支持图表">7. 支持图表</h3>
 
-<div id="echarts1091" style="width: 500px;height:400px;margin: 0 auto"></div>
+<div id="echarts4551" style="width: 500px;height:400px;margin: 0 auto"></div>
 <script src="https://unpkg.com/echarts@5.6.0/dist/echarts.simple.min.js" ></script>
 <script >
-  if (window.eChartecharts1091ResizeHandler) {
-    window.removeEventListener("resize", eChartecharts1091ResizeHandler);
+  if (window.eChartecharts4551ResizeHandler) {
+    window.removeEventListener("resize", eChartecharts4551ResizeHandler);
   }
-  var optionecharts1091 = {
+  var optionecharts4551 = {
   "backgroundColor": "#212121",
   "title": {
     "text": "「晚晴幽草轩」访问来源",
@@ -192,22 +312,22 @@ $$</p>
   ]
 };
   if (window.echarts !== undefined) {
-    var eChartecharts1091 = echarts.init(document.getElementById('echarts1091'));
-    eChartecharts1091.setOption(optionecharts1091);
-    var eChartecharts1091ResizeHandler = function() {
-      eChartecharts1091.resize();
+    var eChartecharts4551 = echarts.init(document.getElementById('echarts4551'));
+    eChartecharts4551.setOption(optionecharts4551);
+    var eChartecharts4551ResizeHandler = function() {
+      eChartecharts4551.resize();
     };
-    window.addEventListener("resize", eChartecharts1091ResizeHandler);
+    window.addEventListener("resize", eChartecharts4551ResizeHandler);
   }
 </script>
 
-<div id="echarts8002" style="width: 500px;height:400px;margin: 0 auto"></div>
+<div id="echarts5081" style="width: 500px;height:400px;margin: 0 auto"></div>
 <script src="https://unpkg.com/echarts@5.6.0/dist/echarts.simple.min.js" ></script>
 <script >
-  if (window.eChartecharts8002ResizeHandler) {
-    window.removeEventListener("resize", eChartecharts8002ResizeHandler);
+  if (window.eChartecharts5081ResizeHandler) {
+    window.removeEventListener("resize", eChartecharts5081ResizeHandler);
   }
-  var optionecharts8002 = {
+  var optionecharts5081 = {
   legend: {
     data: ['Altitude (km) vs. temperature (°C)']
   },
@@ -254,12 +374,12 @@ $$</p>
   ]
 };
   if (window.echarts !== undefined) {
-    var eChartecharts8002 = echarts.init(document.getElementById('echarts8002'));
-    eChartecharts8002.setOption(optionecharts8002);
-    var eChartecharts8002ResizeHandler = function() {
-      eChartecharts8002.resize();
+    var eChartecharts5081 = echarts.init(document.getElementById('echarts5081'));
+    eChartecharts5081.setOption(optionecharts5081);
+    var eChartecharts5081ResizeHandler = function() {
+      eChartecharts5081.resize();
     };
-    window.addEventListener("resize", eChartecharts8002ResizeHandler);
+    window.addEventListener("resize", eChartecharts5081ResizeHandler);
   }
 </script>
 <blockquote>
@@ -309,7 +429,7 @@ $$</p>
 <p>总而言之，不同于其它<strong>所见即所得</strong>的编辑器：你只需使用键盘专注于书写文本内容，就可以生成印刷级的排版格式，省却在键盘和工具栏之间来回切换，调整内容和格式的麻烦。<strong>Markdown 在流畅的书写和印刷级的阅读体验之间找到了平衡。</strong> 目前它已经成为世界上最大的技术分享网站 <code>GitHub</code> 和 技术问答网站 <code>StackOverFlow</code> 的御用书写格式，而且越发流行，正在在向各行业渗透。</p>
 <p>最新更新于 2025.04.16</p>
 <p>::: warning</p>
-<h1>Heading 1</h1>
+<h1 id="Heading-1">Heading 1</h1>
 <p>Text</p>
 <p>:::</p>
 <p>NH<sub>4</sub><sup>+</sup></p>
@@ -351,7 +471,7 @@ This is a second line <a href="#fnref2" class="footnote-backref">↩︎</a></p>
   <entry>
     <title>RSA加密解密 V1.1</title>
     <url>/fjqz177-hexo-next-pages/posts/4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>RSA加密解密 V1.1</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="RSA加密解密-V1-1">RSA加密解密 V1.1</h1>
 <h2 id="V1-1更新日志">V1.1更新日志</h2>
 <p>加入显示加密解密所用时间功能优化整合取模函数exp_mode</p>
 <h2 id="源码">源码</h2>
@@ -368,7 +488,7 @@ This is a second line <a href="#fnref2" class="footnote-backref">↩︎</a></p>
   <entry>
     <title>RSA加密解密 V1.2</title>
     <url>/fjqz177-hexo-next-pages/posts/5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>RSA加密解密 V1.2</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="RSA加密解密-V1-2">RSA加密解密 V1.2</h1>
 <h2 id="V1-2更新日志">V1.2更新日志</h2>
 <p>加入了输入数据判断是否为纯数字可以自由选择加密或者解密对文本显示进行了优化</p>
 <h2 id="源码">源码</h2>
@@ -387,7 +507,7 @@ This is a second line <a href="#fnref2" class="footnote-backref">↩︎</a></p>
     <url>/fjqz177-hexo-next-pages/posts/14/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>快速上手 opencode，体验 oh-my-opencode（现已改名为 oh-my-openagent）的强大功能！</p>
 <span id="more"></span>
-<h1>一、基础环境配置</h1>
+<h1 id="一、基础环境配置">一、基础环境配置</h1>
 <h2 id="1-Shell-安装">1. Shell 安装</h2>
 <h3 id="Windows：推荐安装-PowerShell">Windows：推荐安装 PowerShell</h3>
 <p>按 <code>Win + R</code>，输入 <code>cmd</code> 并回车，打开命令提示符后执行：</p>
@@ -416,7 +536,7 @@ This is a second line <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 <h3 id="pip-换源">pip 换源</h3>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
 <hr>
-<h1>二、安装 opencode</h1>
+<h1 id="二、安装-opencode">二、安装 opencode</h1>
 <ul>
 <li>官网：<a href="https://opencode.ai/">opencode 官网</a></li>
 </ul>
@@ -430,7 +550,7 @@ This is a second line <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm-check -gu</span><br></pre></td></tr></table></figure>
 <p>通过简单的交互即可完成更新。</p>
 <hr>
-<h1>三、安装 oh-my-opencode（现 oh-my-openagent）</h1>
+<h1 id="三、安装-oh-my-opencode（现-oh-my-openagent）">三、安装 oh-my-opencode（现 oh-my-openagent）</h1>
 <blockquote>
 <p>建议后续都使用 Windows Terminal 打开 PowerShell 进行命令行操作。</p>
 </blockquote>
@@ -441,12 +561,12 @@ This is a second line <a href="#fnref2" class="footnote-backref">↩︎</a></p>
 <p>接下来按照提示一步步完成安装即可。<br>
 AI 会问你一些问题，你只需要根据自己的需求进行选择。</p>
 <hr>
-<h1>四、oh-my-opencode（现 oh-my-openagent）使用</h1>
+<h1 id="四、oh-my-opencode（现-oh-my-openagent）使用">四、oh-my-opencode（现 oh-my-openagent）使用</h1>
 <p>安装完成后，输入 <code>/exit</code> 退出 opencode，再重新执行：</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">opencode</span><br></pre></td></tr></table></figure>
 <p>重新打开后即可开始使用。</p>
 <hr>
-<h1>五、opencode 基本使用方法</h1>
+<h1 id="五、opencode-基本使用方法">五、opencode 基本使用方法</h1>
 <p>opencode 的界面交互，大多数都可以通过以 <code>/</code> 开头的命令完成。<br>
 软件自带智能搜索和自动补齐：输入部分命令后，可以用上下方向键选择，再按 <code>Tab</code> 自动补全，整体体验非常方便。</p>
 <p>如果你不喜欢纯命令行交互，也可以按 <code>Ctrl + P</code> 打开 TUI 界面，用图形化界面进行操作。</p>
@@ -460,7 +580,7 @@ AI 会问你一些问题，你只需要根据自己的需求进行选择。</p>
 <p>opencode 支持的模型供应商非常多。即便不在自带列表中，也可以通过 <code>/connect</code> 中的自定义接口，选择 OpenAI 协议、Anthropic 协议等方式连接其他模型供应商，灵活性很高（当然不是很推荐滥用自定义接入）。</p>
 <p>如果你购买了某个模型厂商的 coding plan 订阅，建议直接参考对应厂商文档进行接入。</p>
 <hr>
-<h1>六、oh-my-opencode（现 oh-my-openagent）基本使用方法</h1>
+<h1 id="六、oh-my-opencode（现-oh-my-openagent）基本使用方法">六、oh-my-opencode（现 oh-my-openagent）基本使用方法</h1>
 <p>oh-my-opencode（现 oh-my-openagent）是一个基于 opencode 的插件系统。安装完成后即可直接使用。</p>
 <p>输入 <code>/</code> 后，如果命令后面的简介是以 <strong><code>(builtin)</code></strong> 开头的，那就是 oh-my-opencode 提供的功能。</p>
 <p>后面我会介绍一些常用工作流插件的使用。其实也不用死记硬背，不懂时直接问 AI 就行，因为 AI 可以访问配置文件和代码库，往往比你更懂当前 opencode 的配置状态以及插件的具体用法。</p>
@@ -474,7 +594,7 @@ AI 会问你一些问题，你只需要根据自己的需求进行选择。</p>
 <p>另外，oh-my-opencode 支持<strong>多模型并行使用</strong>。<br>
 也就是说，你可以同时接入多个模型供应商，在后续使用插件时按任务类型切换模型，灵活性非常高。</p>
 <hr>
-<h1>七、OMO 配置快速上手指南</h1>
+<h1 id="七、OMO-配置快速上手指南">七、OMO 配置快速上手指南</h1>
 <blockquote>
 <p>本指南帮助你快速配置 oh-my-opencode（现 oh-my-openagent），让 AI 助手团队发挥最大效能。</p>
 </blockquote>
@@ -762,7 +882,7 @@ OMO 内置了 11 个专业 Agent：</p>
 <li>简单任务用便宜模型，复杂任务用好模型</li>
 </ol>
 <hr>
-<h1>八、个人使用心得</h1>
+<h1 id="八、个人使用心得">八、个人使用心得</h1>
 <h2 id="1-新手入门操作建议">1. 新手入门操作建议</h2>
 <p>入门阶段可以直接一直使用 <strong>Sisyphus</strong>。<br>
 如果遇到比较大的任务，可以加一个 <code>ulw</code>。</p>
@@ -801,7 +921,7 @@ opencode 会自动下载所有依赖的最新版，通常需要十几秒，具�
 <h3 id="4-3-插件生态">4.3 插件生态</h3>
 <p>opencode 有自己的插件生态，<strong>不能直接复用</strong> Claude Code 中的插件。</p>
 <hr>
-<h1>九、OMO 插件内置命令参考</h1>
+<h1 id="九、OMO-插件内置命令参考">九、OMO 插件内置命令参考</h1>
 <p>根据对 <code>code-yeongyu/oh-my-openagent</code>（即 <strong>Oh My OpenCode</strong>）仓库的全面分析，以下是该插件中所有以 <code>/</code> 开头可触发的斜杠命令（Slash Commands）的完整列表和详细解析。</p>
 <hr>
 <h2 id="1-所有-斜杠命令一览">1. 所有 <code>/</code> 斜杠命令一览</h2>
@@ -1164,8 +1284,8 @@ opencode 会自动下载所有依赖的最新版，通常需要十几秒，具�
 <p><strong>也支持命名空间命令</strong>，例如：</p>
 <figure class="highlight text"><table><tr><td class="code"><pre><span class="line">/daplug:run-prompt</span><br></pre></td></tr></table></figure>
 <hr>
-<h1>十、opencode 自带内置命令参考</h1>
-<p>Let me search the repository for the built-in slash commands available in opencode’s chat interface. 根据 <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a> 的官方文档（<a href="https://github.com/anomalyco/opencode/blob/0243be86a7b548fd6daf421d39bd3c36ca76246b/packages/web/src/content/docs/tui.mdx"><code>packages/web/src/content/docs/tui.mdx</code></a>），以下是 OpenCode 聊天框中以 <code>/</code> 开头能触发的 <strong>全部 18 个自带斜杠命令</strong> 的详细解析：</p>
+<h1 id="十、opencode-自带内置命令参考">十、opencode 自带内置命令参考</h1>
+<p>Let me search the repository for the built-in slash commands available in opencode's chat interface. 根据 <a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a> 的官方文档（<a href="https://github.com/anomalyco/opencode/blob/0243be86a7b548fd6daf421d39bd3c36ca76246b/packages/web/src/content/docs/tui.mdx"><code>packages/web/src/content/docs/tui.mdx</code></a>），以下是 OpenCode 聊天框中以 <code>/</code> 开头能触发的 <strong>全部 18 个自带斜杠命令</strong> 的详细解析：</p>
 <hr>
 <h2 id="1-全部内置斜杠命令一览">1. 全部内置斜杠命令一览</h2>
 <table>
@@ -1416,7 +1536,7 @@ opencode 会自动下载所有依赖的最新版，通常需要十几秒，具�
 </ul>
 <p>这些扩展命令会在弹出菜单中通过不同标签（badge）进行区分，方便识别命令来源。</p>
 <hr>
-<h1>十一、opencode CLI 命令解析</h1>
+<h1 id="十一、opencode-CLI-命令解析">十一、opencode CLI 命令解析</h1>
 <h2 id="1-默认行为">1. 默认行为</h2>
 <p>不带任何参数直接运行 <code>opencode</code> 时，默认会启动 <strong>TUI（终端用户界面）</strong>：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">opencode</span><br></pre></td></tr></table></figure>
@@ -1967,8 +2087,8 @@ opencode 会自动下载所有依赖的最新版，通常需要十几秒，具�
 <td>自定义模型配置获取 URL</td>
 </tr>
 <tr>
-<td>…</td>
-<td>…</td>
+<td>...</td>
+<td>...</td>
 <td>还有更多实验性环境变量，详见文档</td>
 </tr>
 </tbody>
@@ -1986,148 +2106,12 @@ opencode 会自动下载所有依赖的最新版，通常需要十几秒，具�
       </tags>
   </entry>
   <entry>
-    <title>RSA加密解密 初版</title>
-    <url>/fjqz177-hexo-next-pages/posts/3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>RSA加密解密 初版</h1>
-<h2 id="初版">初版</h2>
-<h2 id="源码">源码</h2>
-<span id="more"></span>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">扩展欧几里的算法</span></span><br><span class="line"><span class="string">计算 ax + by = 1中的x与y的整数解（a与b互质）</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ext_gcd</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">        x1 = <span class="number">1</span></span><br><span class="line">        y1 = <span class="number">0</span></span><br><span class="line">        x = x1</span><br><span class="line">        y = y1</span><br><span class="line">        r = a</span><br><span class="line">        <span class="keyword">return</span> r, x, y</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        r, x1, y1 = ext_gcd(b, a % b)</span><br><span class="line">        x = y1</span><br><span class="line">        y = x1 - a // b * y1</span><br><span class="line">        <span class="keyword">return</span> r, x, y</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">超大整数超大次幂然后对超大的整数取模</span></span><br><span class="line"><span class="string">(base ^ exponent) mod n</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">exp_mode</span>(<span class="params">base, exponent, n</span>):</span><br><span class="line">    bin_array = <span class="built_in">bin</span>(exponent)[<span class="number">2</span>:][::-<span class="number">1</span>]</span><br><span class="line">    r = <span class="built_in">len</span>(bin_array)</span><br><span class="line">    base_array = []</span><br><span class="line">    </span><br><span class="line">    pre_base = base</span><br><span class="line">    base_array.append(pre_base)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(r - <span class="number">1</span>):</span><br><span class="line">        next_base = (pre_base * pre_base) % n </span><br><span class="line">        base_array.append(next_base)</span><br><span class="line">        pre_base = next_base</span><br><span class="line">        </span><br><span class="line">    a_w_b = __multi(base_array, bin_array, n)</span><br><span class="line">    <span class="keyword">return</span> a_w_b % n</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">__multi</span>(<span class="params">array, bin_array, n</span>):</span><br><span class="line">    result = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(array)):</span><br><span class="line">        a = array[index]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">int</span>(bin_array[index]):</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        result *= a</span><br><span class="line">        result = result % n <span class="comment"># 加快连乘的速度</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算公钥和私钥的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">gen_key</span>(<span class="params">p, q</span>):</span><br><span class="line">    n = p * q</span><br><span class="line">    fy = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)      <span class="comment"># 计算与n互质的整数个数 欧拉函数</span></span><br><span class="line">    e = <span class="number">65537</span>                    <span class="comment"># 选取e   一般选取65537</span></span><br><span class="line">    <span class="comment"># generate d</span></span><br><span class="line">    a = e</span><br><span class="line">    b = fy</span><br><span class="line">    r, x, y = ext_gcd(a, b)</span><br><span class="line">    <span class="comment"># 计算出的x不能是负数，如果是负数，说明p、q、e选取失败，不过可以把x加上fy，使x为正数，才能计算。</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        x = x + fy</span><br><span class="line">    d = x</span><br><span class="line">    <span class="comment"># 返回：   公钥     私钥</span></span><br><span class="line">    <span class="keyword">return</span>    (n, e), (n, d)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加密函数 m是被加密的信息 加密成为c</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">encrypt</span>(<span class="params">m, pubkey</span>):</span><br><span class="line">    n = pubkey[<span class="number">0</span>]</span><br><span class="line">    e = pubkey[<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    c = exp_mode(m, e, n)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"><span class="comment"># 解密函数 c是密文，解密为明文m</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">c, selfkey</span>):</span><br><span class="line">    n = selfkey[<span class="number">0</span>]</span><br><span class="line">    d = selfkey[<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    m = exp_mode(c, d, n)</span><br><span class="line">    <span class="keyword">return</span> m</span><br><span class="line"></span><br><span class="line"><span class="comment"># 主程序</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;公钥私钥中用到的两个大质数p,q，都是1024位&#x27;&#x27;&#x27;</span></span><br><span class="line">    p = <span class="number">106697219132480173106064317148705638676529121742557567770857687729397446898790451577487723991083173010242416863238099716044775658681981821407922722052778958942891831033512463262741053961681512908218003840408526915629689432111480588966800949428079015682624591636010678691927285321708935076221951173426894836169</span></span><br><span class="line">    q = <span class="number">144819424465842307806353672547344125290716753535239658417883828941232509622838692761917211806963011168822281666033695157426515864265527046213326145174398018859056439431422867957079149967592078894410082695714160599647180947207504108618794637872261572262805565517756922288320779308895819726074229154002310375209</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;生成公钥私钥&#x27;&#x27;&#x27;</span></span><br><span class="line">    pubkey, selfkey = gen_key(p, q)</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;需要被加密的信息转化成数字，长度小于秘钥n的长度，如果信息长度大于n的长度，那么分段进行加密，分段解密即可。&#x27;&#x27;&#x27;</span></span><br><span class="line">    m = <span class="number">1356205320457610288745198967657644166379972189839804389074591563666634066646564410685955217825048626066190866536592405966964024022236587593447122392540038493893121248948780525117822889230574978651418075403357439692743398250207060920929117606033490559159560987768768324823011579283223392964454439904542675637683985296529882973798752471233683249209762843835985174607047556306705224118165162905676610067022517682197138138621344578050034245933990790845007906416093198845798901781830868021761765904777531676765131379495584915533823288125255520904108500256867069512326595285549579378834222350197662163243932424184772115345</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;待加密信息--&gt;&quot;</span>,m)</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;信息加密，m被加密的信息，c是加密后的信息&#x27;&#x27;&#x27;</span></span><br><span class="line">    c = encrypt(m, pubkey)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;被加密后的密文--&gt;&quot;</span>,c)</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;信息解密&#x27;&#x27;&#x27;</span></span><br><span class="line">    d = decrypt(c, selfkey)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;被解密后的明文--&gt;&quot;</span>,d)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>密码学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown测试</title>
-    <url>/fjqz177-hexo-next-pages/posts/6/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>做一个Markdown页面渲染测试</p>
-<span id="more"></span>
-<h1>欢迎使用 <code>Arya</code> 在线 Markdown 编辑器</h1>
-<p><a href="https://markdown.lovejade.cn/?utm_source=markdown.lovejade.cn">Arya</a>，是一款基于 <code>Vue</code>、<code>Vditor</code>，为未来而构建的在线 Markdown 编辑器；轻量且强大：内置粘贴 HTML 自动转换为 Markdown，支持流程图、甘特图、时序图、任务列表，可导出携带样式的图片、PDF、微信公众号特制的 HTML 等等。</p>
-<hr>
-<h2 id="如何使用">如何使用</h2>
-<p><strong>微注</strong>：清空目前这份默认文档，即处于可使用态。<a href="https://markdown.lovejade.cn/?utm_source=markdown.lovejade.cn">Arya</a> 另一大优点在于：编辑内容只会在您本地进行保存，不会上传您的数据至服务器，<strong>绝不窥测用户个人隐私，可放心使用</strong>；Github 源码：<a href="https://github.com/nicejade/markdown-online-editor">markdown-online-editor</a>，部分功能仍在开发🚧，敬请期待。</p>
-<p>默认为<a href="https://hacpai.com/article/1577370404903?utm_source=github.com">所见即所得</a>模式，可通过 <code>⌘-⇧-M</code>（<code>Ctrl-⇧-M</code>）进行切换；或通过以下方式：</p>
-<ul>
-<li>所见即所得：<code>⌘-⌥-7</code>（<code>Ctrl-alt-7</code>）；</li>
-<li>即时渲染：<code>⌘-⌥-8</code>（<code>Ctrl-alt-8</code>）；</li>
-<li>分屏渲染：<code>⌘-⌥-9</code>（<code>Ctrl-alt-9</code>）；</li>
-</ul>
-<h3 id="PPT-预览">PPT 预览</h3>
-<p>如果您用作 <code>PPT</code> 预览（入口在 <code>设置</code>中），需要注意，这里暂还不能支持各种图表的渲染；您可以使用 <code>---</code> 来定义水平方向上幻灯片，用 <code>--</code> 来定义垂直幻灯片；更多设定可以参见 <a href="https://github.com/hakimel/reveal.js#table-of-contents">RevealJs 文档</a>。</p>
-<hr>
-<h2 id="什么是-Markdown">什么是 Markdown</h2>
-<p><a href="https://nicelinks.site/tags/Markdown/?utm_source=markdown.lovejade.cn">Markdown</a> 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号，以最小的输入代价，生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，<strong>粗体</strong>、<em>斜体</em> 或者<a href="https://vue-cli3.lovejade.cn/explore/">超文本链接</a>，更棒的是，它还可以：</p>
-<hr>
-<h3 id="1-制作待办事宜-Todo-列表">1. 制作待办事宜 <code>Todo</code> 列表</h3>
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🎉 通常<code>Markdown</code> 解析器自带的基本功能；</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🍀 支持<strong>流程图</strong>、<strong>甘特图</strong>、<strong>时序图</strong>、<strong>任务列表</strong>；</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🏁 支持粘贴 HTML 自动转换为 Markdown；</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 💃🏻 支持插入原生 Emoji、设置常用表情列表；</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🚑 支持编辑内容保存<strong>本地存储</strong>，防止意外丢失；</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 📝 支持<strong>实时预览</strong>，主窗口大小拖拽，字符计数；</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🛠 支持常用快捷键(<strong>Tab</strong>)，及代码块添加复制</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> ✨ 支持<strong>导出</strong>携带样式的 PDF、PNG、JPEG 等；</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> ✨ 升级 Vditor，新增对<code>echarts</code> 图表的支持；</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 👏 支持检查并格式化 Markdown 语法，使其专业；</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🦑 支持五线谱、及<a href="https://github.com/b3log/vditor/issues/117?utm_source=hacpai.com#issuecomment-526986052">部分站点、视频、音频解析</a>；</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> 🌟 增加对<strong>所见即所得</strong>编辑模式的支持(<code>⌘-⇧-M</code>)；</li>
-</ul>
-<hr>
-<h3 id="2-书写一个质能守恒公式-LaTeX">2. 书写一个质能守恒公式[^LaTeX]</h3>
-<p>$$<br>
-E=mc^2<br>
-$$</p>
-<hr>
-<h3 id="3-高亮一段代码-code">3. 高亮一段代码[^code]</h3>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 给页面里所有的 DOM 元素添加一个 1px 的描边（outline）;</span></span><br><span class="line">[].<span class="property">forEach</span>.<span class="title function_">call</span>($$(<span class="string">&quot;*&quot;</span>),<span class="keyword">function</span>(<span class="params">a</span>)&#123;</span><br><span class="line">  a.<span class="property">style</span>.<span class="property">outline</span>=<span class="string">&quot;1px solid #&quot;</span>+(~~(<span class="title class_">Math</span>.<span class="title function_">random</span>()*(<span class="number">1</span>&lt;&lt;<span class="number">24</span>))).<span class="title function_">toString</span>(<span class="number">16</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="4-高效绘制流程图">4. 高效绘制<a href="https://github.com/knsv/mermaid#flowchart">流程图</a></h3>
-<pre class="mermaid">graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;</pre>
-<h3 id="5-高效绘制序列图">5. 高效绘制<a href="https://github.com/knsv/mermaid#sequence-diagram">序列图</a></h3>
-<pre class="mermaid">sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->John: Hello John, how are you?
-    loop Healthcheck
-        John->John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail...
-    John-->Alice: Great!
-    John->Bob: How about you?
-    Bob-->John: Jolly good!</pre>
-<h3 id="6-高效绘制甘特图">6. 高效绘制<a href="https://github.com/knsv/mermaid#gantt-diagram">甘特图</a></h3>
-<blockquote>
-<p><strong>甘特图</strong>内在思想简单。基本是一条线条图，横轴表示时间，纵轴表示活动（项目），线条表示在整个期间上计划和实际的活动完成情况。它直观地表明任务计划在什么时候进行，及实际进展与计划要求的对比。</p>
-</blockquote>
-<pre class="mermaid">gantt
-    title 项目开发流程
-    section 项目确定
-        需求分析       :a1, 2019-06-22, 3d
-        可行性报告     :after a1, 5d
-        概念验证       : 5d
-    section 项目实施
-        概要设计      :2019-07-05  , 5d
-        详细设计      :2019-07-08, 10d
-        编码          :2019-07-15, 10d
-        测试          :2019-07-22, 5d
-    section 发布验收
-        发布: 2d
-        验收: 3d</pre>
-<h3 id="8-绘制表格">8. 绘制表格</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">作品名称</th>
-<th style="text-align:left">在线地址</th>
-<th style="text-align:center">上线日期</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">倾城之链</td>
-<td style="text-align:left"><a href="https://nicelinks.site/??utm_source=markdown.lovejade.cn">https://nicelinks.site</a></td>
-<td style="text-align:center">2017-09-20</td>
-</tr>
-<tr>
-<td style="text-align:left">晚晴幽草轩</td>
-<td style="text-align:left"><a href="https://jeffjade.com/??utm_source=markdown.lovejade.cn">https://jeffjade.com</a></td>
-<td style="text-align:center">2014-09-20</td>
-</tr>
-<tr>
-<td style="text-align:left">静轩之别苑</td>
-<td style="text-align:left"><a href="http://quickapp.lovejade.cn/??utm_source=markdown.lovejade.cn">http://quickapp.lovejade.cn</a></td>
-<td style="text-align:center">2019-01-12</td>
-</tr>
-</tbody>
-</table>
-<h3 id="9-更详细语法说明">9. 更详细语法说明</h3>
-<h3 id="想要查看更详细的语法说明，可以参考这份-Markdown-资源列表，涵盖入门至进阶教程，以及资源、平台等信息，能让您对她有更深的认知。">想要查看更详细的语法说明，可以参考这份 <a href="https://github.com/nicejade/nice-front-end-tutorial/blob/master/tutorial/markdown-tutorial.md">Markdown 资源列表</a>，涵盖入门至进阶教程，以及资源、平台等信息，能让您对她有更深的认知。</h3>
-<p>总而言之，不同于其它<em>所见即所得</em>的编辑器：你只需使用键盘专注于书写文本内容，就可以生成印刷级的排版格式，省却在键盘和工具栏之间来回切换，调整内容和格式的麻烦。<strong>Markdown 在流畅的书写和印刷级的阅读体验之间找到了平衡。</strong> 目前它已经成为世界上最大的技术分享网站 <code>GitHub</code> 和 技术问答网站 <code>StackOverFlow</code> 的御用书写格式，而且越发流行，正在在向各行业渗透。</p>
-<p>最新更新于 2019.08.21</p>
-<script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';	mermaid.initialize({startOnLoad: true, flowchart: {curve: 'linear'}}); </script>]]></content>
-      <categories>
-        <category>Markdown</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WSL速成指南</title>
     <url>/fjqz177-hexo-next-pages/posts/13/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>WSL（Windows Subsystem for Linux）能让你在Windows上直接运行Linux环境</h1>
-<h1>这篇文章旨在速成WSL的安装与使用，以及关键的无损迁移到其他硬盘教程</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="WSL（Windows-Subsystem-for-Linux）能让你在Windows上直接运行Linux环境">WSL（Windows Subsystem for Linux）能让你在Windows上直接运行Linux环境</h1>
+<h1 id="这篇文章旨在速成WSL的安装与使用，以及关键的无损迁移到其他硬盘教程">这篇文章旨在速成WSL的安装与使用，以及关键的无损迁移到其他硬盘教程</h1>
 <span id="more"></span>
-<h1>1. 安装WSL</h1>
+<h1 id="1-安装WSL">1. 安装WSL</h1>
 <p>桌面左下角<strong>搜索框</strong>搜索<strong>控制面板</strong>，打开<strong>控制面板</strong>，点击“<strong>程序</strong>”，然后点击“<strong>启用或关闭Windows功能</strong>”，在弹出的窗口中找到<strong>勾选</strong></p>
 <ul>
 <li><strong>Hyper-V</strong></li>
@@ -2149,7 +2133,7 @@ $$</p>
 <p>可以看到当前安装的WSL发行版及其版本信息以及运行状态</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$</span> wsl <span class="literal">-l</span> <span class="literal">-v</span></span><br><span class="line">  NAME              STATE           VERSION</span><br><span class="line">* Ubuntu<span class="literal">-24</span>.<span class="number">04</span>      Stopped         <span class="number">2</span></span><br><span class="line">  docker<span class="literal">-desktop</span>    Stopped         <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>这里的*表示当前默认启动的发行版（docker是我自己安装的，不用管）</p>
-<h1>2. 迁移WSL到其他硬盘</h1>
+<h1 id="2-迁移WSL到其他硬盘">2. 迁移WSL到其他硬盘</h1>
 <p>此时我们的WSL是安装在C盘的，很容易就把C盘空间占满，如果想迁移到其他硬盘，可以按照以下步骤操作</p>
 ]]></content>
       <categories>
@@ -2162,160 +2146,9 @@ $$</p>
       </tags>
   </entry>
   <entry>
-    <title>图形化恩尼格码密码机 初版</title>
-    <url>/fjqz177-hexo-next-pages/posts/2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>图形化恩尼格码密码机 初版</h1>
-<h2 id="初版">初版</h2>
-<h2 id="源码">源码</h2>
-<span id="more"></span>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 此程序需安装easygui库使用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> ezgui</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">simple_replace</span>(<span class="params">password, replace_word1, replace_word2, replace_word3</span>):  </span><br><span class="line">    count = <span class="number">0</span>  </span><br><span class="line">    new_pass = <span class="string">&#x27;&#x27;</span>  </span><br><span class="line">    ori_table = <span class="string">&#x27;abcdefghijklmnopqrstuvwxyz&#x27;</span>  </span><br><span class="line">    <span class="keyword">for</span> obj <span class="keyword">in</span> password:  </span><br><span class="line">        table1 = <span class="built_in">str</span>.maketrans(ori_table, replace_word1)  <span class="comment"># 建立转子1的映射表</span></span><br><span class="line">        table2 = <span class="built_in">str</span>.maketrans(ori_table, replace_word2)  <span class="comment"># 建立转子2的映射表</span></span><br><span class="line">        table3 = <span class="built_in">str</span>.maketrans(ori_table, replace_word3)  <span class="comment"># 建立转子3的映射表</span></span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(obj, table1)  </span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(new_obj, table2)  </span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(new_obj, table3)  </span><br><span class="line">        new_obj = reverse_word(new_obj)  </span><br><span class="line">        reverse_table1 = <span class="built_in">str</span>.maketrans(replace_word1, ori_table)  </span><br><span class="line">        reverse_table2 = <span class="built_in">str</span>.maketrans(replace_word2, ori_table)</span><br><span class="line">        reverse_table3 = <span class="built_in">str</span>.maketrans(replace_word3, ori_table)</span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(new_obj, reverse_table3)  </span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(new_obj, reverse_table2)  </span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(new_obj, reverse_table1)  </span><br><span class="line">        new_pass += new_obj  </span><br><span class="line">        replace_word1 = rotors(replace_word1)  </span><br><span class="line">        count += <span class="number">1</span>  </span><br><span class="line">        <span class="keyword">if</span> count % <span class="number">676</span> == <span class="number">0</span>:   </span><br><span class="line">            replace_word3 = rotors(replace_word3)</span><br><span class="line">        <span class="keyword">elif</span> count % <span class="number">26</span> == <span class="number">0</span>:  </span><br><span class="line">            replace_word2 = rotors(replace_word2)</span><br><span class="line">    <span class="keyword">return</span> new_pass  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">is_str</span>(<span class="params">password, replace_word1, replace_word2, replace_word3</span>):  </span><br><span class="line">    an = re.<span class="keyword">match</span>(<span class="string">&#x27;[a-z]+$&#x27;</span>, password)  </span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">type</span>(password) == <span class="built_in">type</span>(replace_word1) == <span class="built_in">type</span>(replace_word2) == <span class="built_in">type</span>(replace_word3) == <span class="built_in">type</span>(<span class="string">&#x27;a&#x27;</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;密码必须是字符串！&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="keyword">not</span> an:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;字符串只能包含小写字母！&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="keyword">not</span> <span class="built_in">len</span>(replace_word1) == <span class="built_in">len</span>(replace_word2) == <span class="built_in">len</span>(replace_word3) == <span class="number">26</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;替换码必须为26个字母！&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span>  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rotors</span>(<span class="params">replace_word</span>):  </span><br><span class="line">    <span class="keyword">return</span> replace_word[<span class="number">1</span>:] + replace_word[<span class="number">0</span>]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 自反器很好设置的，只要设置一个字典，保证所有字母（26个）两两对应就可以了</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">reverse_word</span>(<span class="params">word</span>):</span><br><span class="line">    dic = &#123;<span class="string">&#x27;a&#x27;</span>: <span class="string">&#x27;n&#x27;</span>, <span class="string">&#x27;b&#x27;</span>: <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;c&#x27;</span>: <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;d&#x27;</span>: <span class="string">&#x27;q&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;e&#x27;</span>: <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;f&#x27;</span>: <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;g&#x27;</span>: <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;h&#x27;</span>: <span class="string">&#x27;u&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;i&#x27;</span>: <span class="string">&#x27;v&#x27;</span>, <span class="string">&#x27;j&#x27;</span>: <span class="string">&#x27;w&#x27;</span>, <span class="string">&#x27;k&#x27;</span>: <span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;l&#x27;</span>: <span class="string">&#x27;y&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;m&#x27;</span>: <span class="string">&#x27;z&#x27;</span>, <span class="string">&#x27;n&#x27;</span>: <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;o&#x27;</span>: <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;p&#x27;</span>: <span class="string">&#x27;c&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;q&#x27;</span>: <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;r&#x27;</span>: <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;s&#x27;</span>: <span class="string">&#x27;f&#x27;</span>, <span class="string">&#x27;t&#x27;</span>: <span class="string">&#x27;g&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;u&#x27;</span>: <span class="string">&#x27;h&#x27;</span>, <span class="string">&#x27;v&#x27;</span>: <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;w&#x27;</span>: <span class="string">&#x27;j&#x27;</span>, <span class="string">&#x27;x&#x27;</span>: <span class="string">&#x27;k&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;y&#x27;</span>: <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;z&#x27;</span>: <span class="string">&#x27;m&#x27;</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> dic[word]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    title = <span class="string">&#x27;by 石光k一5&#x27;</span></span><br><span class="line">    ezgui.msgbox(<span class="string">&#x27;这是恩尼格码密码机&#x27;</span>,title)</span><br><span class="line">    a_password = ezgui.enterbox(<span class="string">&#x27;请输入明文加密或密文解密:&#x27;</span>,title)</span><br><span class="line">    r_password1 = <span class="string">&#x27;qwertyuiopasdfghjklzxcvbnm&#x27;</span>  <span class="comment"># 转子1，自己设置即可</span></span><br><span class="line">    r_password2 = <span class="string">&#x27;asdfqwerzxcvtyuiopghjklbnm&#x27;</span>  <span class="comment"># 转子2，自己设置即可</span></span><br><span class="line">    r_password3 = <span class="string">&#x27;poiuytrewqasdfghjklmnbvcxz&#x27;</span>  <span class="comment"># 转子3，自己设置即可</span></span><br><span class="line">    <span class="keyword">if</span> is_str(a_password, r_password1, r_password2, r_password3):</span><br><span class="line">        msg=<span class="string">f&#x27;密文/明文如下:<span class="subst">&#123;simple_replace(a_password, r_password1, r_password2, r_password3)&#125;</span>&#x27;</span></span><br><span class="line">        ezgui.textbox(msg,title)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>密码学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装完fedora 39后要做的事</title>
-    <url>/fjqz177-hexo-next-pages/posts/9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>在你安装完fedora以后，好像缺了点什么，这篇文章可以帮到你😁</h1>
-<span id="more"></span>
-<h1>1. 第一步当然是换源啦</h1>
-<p>在终端中输入命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> sed -e <span class="string">&#x27;s|^metalink=|#metalink=|g&#x27;</span> \</span><br><span class="line">         -e <span class="string">&#x27;s|^#baseurl=http://download.example/pub/fedora/linux|baseurl=https://mirrors.ustc.edu.cn/fedora|g&#x27;</span> \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/fedora.repo \</span><br><span class="line">         /etc/yum.repos.d/fedora-updates.repo</span><br></pre></td></tr></table></figure>
-<p>顺便把 <code>RPM Fusion</code> 的源也换好</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install https://mirrors.ustc.edu.cn/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.ustc.edu.cn/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</span><br></pre></td></tr></table></figure>
-<h2 id="添加-Flathub-存储库">添加 <code>Flathub</code> 存储库</h2>
-<p>Fedora 默认情况下启用了 Flatpak。 但是，它是过滤后的 Flatpak 。</p>
-<p>因此，要访问各种可用的 Flatpak 应用程序，你可以在终端中使用以下命令添加 Flathub 存储库：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">flatpak remote-add --if-not-exists flathub https://mirror.sjtu.edu.cn/flathub/flathub.flatpakrepo</span><br><span class="line">flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub</span><br></pre></td></tr></table></figure>
-<h1>2. 编辑 <code>dnf</code> 包管理器配置</h1>
-<p>Fedora 可以通过多种方法增强下载包的速度。比如选择最快的镜像，可以提高包下载速度。此外，如果你的互联网连接速度足够快，则可以更改并行下载的数量以获得更快的下载。</p>
-<p>要做这两件事，只需编辑位于 <code>/etc/dnf/dnf.conf</code> 的 <code>dnf</code> 配置文件。</p>
-<p>将以下行附加到 <code>/etc/dnf/dnf.conf</code> 文件中，保存并退出：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># fastestmirror=true</span></span><br><span class="line">deltarpm=<span class="literal">true</span></span><br><span class="line">max_parellel_downloads=32</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>fastestmirror</code> 为选择最快软件源，因为我们手动修改了仓库里面的信息则不需要启动这个。</li>
-<li><code>deltarpm</code> 相当于增量下载，把软件增加的部分下载下来，和原软件包合成新软件包，类似于现在的 Android 软件更新。</li>
-<li><code>max_parellel_downloads</code> 设置最大并行下载数量。</li>
-</ul>
-<h1>3. 更新系统</h1>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf update</span><br></pre></td></tr></table></figure>
-<p>更新系统之后多半会安装新的内核，以及会出现一些无用的依赖。重新启动系统到新的内核，确保内核运转没有问题了，就可以删除旧内核以及无用的依赖了。</p>
-<p>使用以下命令就可以自动删除无用的依赖：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf autoremove</span><br></pre></td></tr></table></figure>
-<p>Fedora 内核更新快，但是每次更新内核，旧的内核不会自动删除，占用硬盘空间。以前的教程删除旧内核都是先搜索，再移除要删除的版本，输入版本号也非常麻烦。使用以下命令即可一条命令删除旧内核：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf remove --oldinstallonly</span><br></pre></td></tr></table></figure>
-<h1>4. 终端美化</h1>
-<h2 id="首先安装zsh">首先安装<code>zsh</code></h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install zsh git <span class="comment"># 这里安装git是为了后面的zsh美化做准备</span></span><br></pre></td></tr></table></figure>
-<p>然后打开<code>zsh</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">zsh</span><br></pre></td></tr></table></figure>
-<p>看到这个提示，按 <code>0</code> 跳过<br>
-<a href="https://pic.imgdb.cn/item/65f835249f345e8d0337229c.png"><img src="https://pic.imgdb.cn/item/65f835249f345e8d0337229c.png" alt="oIIheQ.png"></a></p>
-<h2 id="然后我们把-oh-my-zsh-插件下载下来">然后我们把 <code>oh-my-zsh</code> 插件下载下来</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitee.com/mirrors/oh-my-zsh.git ~/.oh-my-zsh</span><br></pre></td></tr></table></figure>
-<p>使用 <code>oh-my-zsh</code> 的模板替换 <code>zsh</code> 自带的配置文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</span><br></pre></td></tr></table></figure>
-<p>让新的配置文件生效</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
-<h2 id="接下来安装-powerlevel10k-这个主题">接下来安装 <code>powerlevel10k</code> 这个主题</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gh.api.99988866.xyz/https://github.com/romkatv/powerlevel10k.git <span class="variable">$&#123;ZSH_CUSTOM:-<span class="variable">$HOME</span>/.oh-my-zsh/custom&#125;</span>/themes/powerlevel10k</span><br></pre></td></tr></table></figure>
-<p>然后我们编辑配置文件使主题生效</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.zshrc</span><br></pre></td></tr></table></figure>
-<p>找到 <code>ZSH_THEME=……</code> 这一行，将其改为 <code>ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</code></p>
-<p>然后更改默认终端并重启</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
-<p>接着打开终端输入 <code>p10k configure</code> 按照提示配置你喜欢的样式</p>
-<h2 id="安装一些常用的插件">安装一些常用的插件</h2>
-<p>打开 <code>~/.zshrc</code> 文件找到 <code>plugins=( git )</code> ，这里是我们已经启用的插件</p>
-<p>如果想要启用某个插件请直接修改</p>
-<blockquote>
-<p>plugins = (插件A 插件B 插件C)</p>
-</blockquote>
-<h3 id="git">git</h3>
-<p>无需配置，默认已开启</p>
-<p>使我们可以方便的使用git命令的缩写</p>
-<p>常见缩写：</p>
-<blockquote>
-<p>gp=‘git push’<br>
-gm=‘git merge’<br>
-gl=‘git pull’</p>
-</blockquote>
-<p>查看所有git命令缩写</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.oh-my-zsh/plugins/git/git.plugin.zsh</span><br></pre></td></tr></table></figure>
-<h3 id="sudo">sudo</h3>
-<p>偶尔输入某个命令，提示没有权限，需要加sudo，这个时候按两下ESC，就会在命令行头部加上sudo</p>
-<h3 id="extract">extract</h3>
-<p>功能强大的解压插件，所有类型的文件解压一个命令<code>x</code>全搞定，再也不需要去记<code>tar</code>后面到底是哪几个参数了。</p>
-<h3 id="更多自带插件可以去-oh-my-zsh-官网查看">更多自带插件可以去 <code>oh-my-zsh</code> 官网查看</h3>
-<p>官方插件一览：<a href="https://link.jianshu.com/?t=https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview">https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview</a></p>
-<h2 id="接下来是需要自己手动安装的一些插件">接下来是需要自己手动安装的一些插件</h2>
-<h3 id="zsh-autosuggestions">zsh-autosuggestions</h3>
-<p>非常好用的一个插件，会记录你之前输入过的所有命令，并且自动匹配你可能想要输入命令，然后按→补全</p>
-<p>安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gh.api.99988866.xyz/https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
-<h3 id="zsh-syntax-highlighting">zsh-syntax-highlighting</h3>
-<p>命令太多，有时候记不住，等输入完了才知道命令输错了，这个插件直接在输入过程中就会提示你，当前命令是否正确，错误红色，正确绿色</p>
-<p>安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gh.api.99988866.xyz/https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
-<h3 id="zsh-completions">zsh-completions</h3>
-<p>命令补全插件，输入命令按Tab键后会提示可以使用的命令和说明。</p>
-<p>安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载插件</span></span><br><span class="line">git <span class="built_in">clone</span> --depth=1 https://gh.api.99988866.xyz/https://github.com/zsh-users/zsh-completions.git <span class="variable">$&#123;ZSH_CUSTOM:-<span class="variable">$&#123;ZSH:-~/.oh-my-zsh&#125;</span>/custom&#125;</span>/plugins/zsh-completions</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开~/.zshrc</span></span><br><span class="line"><span class="comment"># 在source &quot;$ZSH/oh-my-zsh.sh&quot;这一行之前添加下面这行代码</span></span><br><span class="line">fpath+=<span class="variable">$&#123;ZSH_CUSTOM:-<span class="variable">$&#123;ZSH:-~/.oh-my-zsh&#125;</span>/custom&#125;</span>/plugins/zsh-completions/src</span><br><span class="line"></span><br><span class="line"><span class="comment">#重启终端</span></span><br><span class="line">zsh</span><br></pre></td></tr></table></figure>
-<h2 id="其他">其他</h2>
-<p>遇事不决，多敲 Tab。</p>
-<h2 id="记得在-zshrc-中把插件启用"><strong>记得在 <code>~/.zshrc</code> 中把插件启用</strong></h2>
-<h1>5. 一些必装的软件</h1>
-<h2 id="bat">bat</h2>
-<p><code>bat</code> 替代 <code>cat</code> 指令，具有语法高亮、行号显示、文件目录显示清晰等强大功能。</p>
-<p>官网：<a href="https://github.com/sharkdp/bat">https://github.com/sharkdp/bat</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install bat</span><br></pre></td></tr></table></figure>
-<h3 id="neofetch">neofetch</h3>
-<p>显示系统信息和logo。（就是看起来美观酷炫，实际上没啥用。）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install neofetch</span><br></pre></td></tr></table></figure>
-<h1>6. Gnome桌面优化</h1>
-<p>要调整 GNOME 的外观和感觉，你需要安装 GNOME 优化Tweaks 和扩展管理器应用程序。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install gnome-tweaks gnome-extensions-app</span><br></pre></td></tr></table></figure>
-<p>然后你就可以在 <a href="https://extensions.gnome.org/">GNOME Shell 扩展页面</a> 挑选扩展了。(记得在浏览器中安装gnome-extensions的浏览器插件哦)</p>
-<h2 id="推荐一些自用的扩展">推荐一些自用的扩展</h2>
-<h3 id="Dash-to-Dock"><a href="https://extensions.gnome.org/extension/307/dash-to-dock/">Dash to Dock</a></h3>
-<p>经典插件，用了都说好</p>
-<h3 id="Coverflow-Alt-Tab"><a href="https://extensions.gnome.org/extension/97/coverflow-alt-tab/">Coverflow Alt-Tab</a></h3>
-<p>能修改Alt + Tab的窗口切换效果，同样支持一些自定义设置。</p>
-<h1>7. 开发环境配置</h1>
-<h2 id="pip换源">pip换源</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install python3-pip</span><br><span class="line">python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip</span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
-<h2 id="Rust-启动！-Rust安装及换源"><s>Rust,启动！</s> Rust安装及换源</h2>
-<h3 id="步骤一：设置-Rustup-镜像，-修改配置-zshrc-or-bashrc">步骤一：设置 Rustup 镜像， 修改配置 ~/.zshrc or ~/.bashrc</h3>
-<p>将下列代码加入到  <code>~/.zshrc</code> or <code>~/.bashrc</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> RUSTUP_DIST_SERVER=<span class="string">&quot;https://rsproxy.cn&quot;</span></span><br><span class="line"><span class="built_in">export</span> RUSTUP_UPDATE_ROOT=<span class="string">&quot;https://rsproxy.cn/rustup&quot;</span></span><br></pre></td></tr></table></figure>
-<p>然后重启终端</p>
-<h3 id="步骤二：安装-Rust（请先完成步骤一的环境变量导入并-source-rc-文件或重启终端生效）">步骤二：安装 Rust（请先完成步骤一的环境变量导入并 source rc 文件或重启终端生效）</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl --proto <span class="string">&#x27;=https&#x27;</span> --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh</span><br></pre></td></tr></table></figure>
-<h3 id="步骤三：设置-crates-io-镜像，-修改配置-cargo-config">步骤三：设置 <code>crates.io</code> 镜像， 修改配置 <code>~/.cargo/config</code></h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[source.crates-io]</span><br><span class="line">replace-with = <span class="string">&#x27;rsproxy-sparse&#x27;</span></span><br><span class="line">[source.rsproxy]</span><br><span class="line">registry = <span class="string">&quot;https://rsproxy.cn/crates.io-index&quot;</span></span><br><span class="line">[source.rsproxy-sparse]</span><br><span class="line">registry = <span class="string">&quot;sparse+https://rsproxy.cn/index/&quot;</span></span><br><span class="line">[registries.rsproxy]</span><br><span class="line">index = <span class="string">&quot;https://rsproxy.cn/crates.io-index&quot;</span></span><br><span class="line">[net]</span><br><span class="line">git-fetch-with-cli = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h1>8. 卸载无用的预装软件</h1>
-<p>首先是卸载LibreOffice</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf remove libreoffice*</span><br></pre></td></tr></table></figure>
-<h1><strong>待未完续</strong>（</h1>
-<h1><s>我想鸽了</s> （不是）</h1>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>fedora</tag>
-        <tag>美化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何给Git Commit GPG签名？</title>
     <url>/fjqz177-hexo-next-pages/posts/10/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>这是最终效果</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="这是最终效果">这是最终效果</h1>
 <p><img src="https://pic.imgdb.cn/item/66140ea268eb935713913019.png" alt=""></p>
 <span id="more"></span>
 <h2 id="起因">起因</h2>
@@ -2421,10 +2254,145 @@ gl=‘git pull’</p>
       </tags>
   </entry>
   <entry>
+    <title>安装完fedora 39后要做的事</title>
+    <url>/fjqz177-hexo-next-pages/posts/9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="在你安装完fedora以后，好像缺了点什么，这篇文章可以帮到你😁">在你安装完fedora以后，好像缺了点什么，这篇文章可以帮到你😁</h1>
+<span id="more"></span>
+<h1 id="1-第一步当然是换源啦">1. 第一步当然是换源啦</h1>
+<p>在终端中输入命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> sed -e <span class="string">&#x27;s|^metalink=|#metalink=|g&#x27;</span> \</span><br><span class="line">         -e <span class="string">&#x27;s|^#baseurl=http://download.example/pub/fedora/linux|baseurl=https://mirrors.ustc.edu.cn/fedora|g&#x27;</span> \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/fedora.repo \</span><br><span class="line">         /etc/yum.repos.d/fedora-updates.repo</span><br></pre></td></tr></table></figure>
+<p>顺便把 <code>RPM Fusion</code> 的源也换好</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install https://mirrors.ustc.edu.cn/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.ustc.edu.cn/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm</span><br></pre></td></tr></table></figure>
+<h2 id="添加-Flathub-存储库">添加 <code>Flathub</code> 存储库</h2>
+<p>Fedora 默认情况下启用了 Flatpak。 但是，它是过滤后的 Flatpak 。</p>
+<p>因此，要访问各种可用的 Flatpak 应用程序，你可以在终端中使用以下命令添加 Flathub 存储库：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">flatpak remote-add --if-not-exists flathub https://mirror.sjtu.edu.cn/flathub/flathub.flatpakrepo</span><br><span class="line">flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub</span><br></pre></td></tr></table></figure>
+<h1 id="2-编辑-dnf-包管理器配置">2. 编辑 <code>dnf</code> 包管理器配置</h1>
+<p>Fedora 可以通过多种方法增强下载包的速度。比如选择最快的镜像，可以提高包下载速度。此外，如果你的互联网连接速度足够快，则可以更改并行下载的数量以获得更快的下载。</p>
+<p>要做这两件事，只需编辑位于 <code>/etc/dnf/dnf.conf</code> 的 <code>dnf</code> 配置文件。</p>
+<p>将以下行附加到 <code>/etc/dnf/dnf.conf</code> 文件中，保存并退出：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># fastestmirror=true</span></span><br><span class="line">deltarpm=<span class="literal">true</span></span><br><span class="line">max_parellel_downloads=32</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>fastestmirror</code> 为选择最快软件源，因为我们手动修改了仓库里面的信息则不需要启动这个。</li>
+<li><code>deltarpm</code> 相当于增量下载，把软件增加的部分下载下来，和原软件包合成新软件包，类似于现在的 Android 软件更新。</li>
+<li><code>max_parellel_downloads</code> 设置最大并行下载数量。</li>
+</ul>
+<h1 id="3-更新系统">3. 更新系统</h1>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf update</span><br></pre></td></tr></table></figure>
+<p>更新系统之后多半会安装新的内核，以及会出现一些无用的依赖。重新启动系统到新的内核，确保内核运转没有问题了，就可以删除旧内核以及无用的依赖了。</p>
+<p>使用以下命令就可以自动删除无用的依赖：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf autoremove</span><br></pre></td></tr></table></figure>
+<p>Fedora 内核更新快，但是每次更新内核，旧的内核不会自动删除，占用硬盘空间。以前的教程删除旧内核都是先搜索，再移除要删除的版本，输入版本号也非常麻烦。使用以下命令即可一条命令删除旧内核：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf remove --oldinstallonly</span><br></pre></td></tr></table></figure>
+<h1 id="4-终端美化">4. 终端美化</h1>
+<h2 id="首先安装zsh">首先安装<code>zsh</code></h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install zsh git <span class="comment"># 这里安装git是为了后面的zsh美化做准备</span></span><br></pre></td></tr></table></figure>
+<p>然后打开<code>zsh</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">zsh</span><br></pre></td></tr></table></figure>
+<p>看到这个提示，按 <code>0</code> 跳过<br>
+<a href="https://pic.imgdb.cn/item/65f835249f345e8d0337229c.png"><img src="https://pic.imgdb.cn/item/65f835249f345e8d0337229c.png" alt="oIIheQ.png"></a></p>
+<h2 id="然后我们把-oh-my-zsh-插件下载下来">然后我们把 <code>oh-my-zsh</code> 插件下载下来</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitee.com/mirrors/oh-my-zsh.git ~/.oh-my-zsh</span><br></pre></td></tr></table></figure>
+<p>使用 <code>oh-my-zsh</code> 的模板替换 <code>zsh</code> 自带的配置文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>让新的配置文件生效</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+<h2 id="接下来安装-powerlevel10k-这个主题">接下来安装 <code>powerlevel10k</code> 这个主题</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gh.api.99988866.xyz/https://github.com/romkatv/powerlevel10k.git <span class="variable">$&#123;ZSH_CUSTOM:-<span class="variable">$HOME</span>/.oh-my-zsh/custom&#125;</span>/themes/powerlevel10k</span><br></pre></td></tr></table></figure>
+<p>然后我们编辑配置文件使主题生效</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nano ~/.zshrc</span><br></pre></td></tr></table></figure>
+<p>找到 <code>ZSH_THEME=……</code> 这一行，将其改为 <code>ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</code></p>
+<p>然后更改默认终端并重启</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<p>接着打开终端输入 <code>p10k configure</code> 按照提示配置你喜欢的样式</p>
+<h2 id="安装一些常用的插件">安装一些常用的插件</h2>
+<p>打开 <code>~/.zshrc</code> 文件找到 <code>plugins=( git )</code> ，这里是我们已经启用的插件</p>
+<p>如果想要启用某个插件请直接修改</p>
+<blockquote>
+<p>plugins = (插件A 插件B 插件C)</p>
+</blockquote>
+<h3 id="git">git</h3>
+<p>无需配置，默认已开启</p>
+<p>使我们可以方便的使用git命令的缩写</p>
+<p>常见缩写：</p>
+<blockquote>
+<p>gp='git push'<br>
+gm='git merge'<br>
+gl='git pull'</p>
+</blockquote>
+<p>查看所有git命令缩写</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.oh-my-zsh/plugins/git/git.plugin.zsh</span><br></pre></td></tr></table></figure>
+<h3 id="sudo">sudo</h3>
+<p>偶尔输入某个命令，提示没有权限，需要加sudo，这个时候按两下ESC，就会在命令行头部加上sudo</p>
+<h3 id="extract">extract</h3>
+<p>功能强大的解压插件，所有类型的文件解压一个命令<code>x</code>全搞定，再也不需要去记<code>tar</code>后面到底是哪几个参数了。</p>
+<h3 id="更多自带插件可以去-oh-my-zsh-官网查看">更多自带插件可以去 <code>oh-my-zsh</code> 官网查看</h3>
+<p>官方插件一览：<a href="https://link.jianshu.com/?t=https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview">https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview</a></p>
+<h2 id="接下来是需要自己手动安装的一些插件">接下来是需要自己手动安装的一些插件</h2>
+<h3 id="zsh-autosuggestions">zsh-autosuggestions</h3>
+<p>非常好用的一个插件，会记录你之前输入过的所有命令，并且自动匹配你可能想要输入命令，然后按→补全</p>
+<p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gh.api.99988866.xyz/https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
+<h3 id="zsh-syntax-highlighting">zsh-syntax-highlighting</h3>
+<p>命令太多，有时候记不住，等输入完了才知道命令输错了，这个插件直接在输入过程中就会提示你，当前命令是否正确，错误红色，正确绿色</p>
+<p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://gh.api.99988866.xyz/https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+<h3 id="zsh-completions">zsh-completions</h3>
+<p>命令补全插件，输入命令按Tab键后会提示可以使用的命令和说明。</p>
+<p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载插件</span></span><br><span class="line">git <span class="built_in">clone</span> --depth=1 https://gh.api.99988866.xyz/https://github.com/zsh-users/zsh-completions.git <span class="variable">$&#123;ZSH_CUSTOM:-<span class="variable">$&#123;ZSH:-~/.oh-my-zsh&#125;</span>/custom&#125;</span>/plugins/zsh-completions</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开~/.zshrc</span></span><br><span class="line"><span class="comment"># 在source &quot;$ZSH/oh-my-zsh.sh&quot;这一行之前添加下面这行代码</span></span><br><span class="line">fpath+=<span class="variable">$&#123;ZSH_CUSTOM:-<span class="variable">$&#123;ZSH:-~/.oh-my-zsh&#125;</span>/custom&#125;</span>/plugins/zsh-completions/src</span><br><span class="line"></span><br><span class="line"><span class="comment">#重启终端</span></span><br><span class="line">zsh</span><br></pre></td></tr></table></figure>
+<h2 id="其他">其他</h2>
+<p>遇事不决，多敲 Tab。</p>
+<h2 id="记得在-zshrc-中把插件启用"><strong>记得在 <code>~/.zshrc</code> 中把插件启用</strong></h2>
+<h1 id="5-一些必装的软件">5. 一些必装的软件</h1>
+<h2 id="bat">bat</h2>
+<p><code>bat</code> 替代 <code>cat</code> 指令，具有语法高亮、行号显示、文件目录显示清晰等强大功能。</p>
+<p>官网：<a href="https://github.com/sharkdp/bat">https://github.com/sharkdp/bat</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install bat</span><br></pre></td></tr></table></figure>
+<h3 id="neofetch">neofetch</h3>
+<p>显示系统信息和logo。（就是看起来美观酷炫，实际上没啥用。）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install neofetch</span><br></pre></td></tr></table></figure>
+<h1 id="6-Gnome桌面优化">6. Gnome桌面优化</h1>
+<p>要调整 GNOME 的外观和感觉，你需要安装 GNOME 优化Tweaks 和扩展管理器应用程序。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install gnome-tweaks gnome-extensions-app</span><br></pre></td></tr></table></figure>
+<p>然后你就可以在 <a href="https://extensions.gnome.org/">GNOME Shell 扩展页面</a> 挑选扩展了。(记得在浏览器中安装gnome-extensions的浏览器插件哦)</p>
+<h2 id="推荐一些自用的扩展">推荐一些自用的扩展</h2>
+<h3 id="Dash-to-Dock"><a href="https://extensions.gnome.org/extension/307/dash-to-dock/">Dash to Dock</a></h3>
+<p>经典插件，用了都说好</p>
+<h3 id="Coverflow-Alt-Tab"><a href="https://extensions.gnome.org/extension/97/coverflow-alt-tab/">Coverflow Alt-Tab</a></h3>
+<p>能修改Alt + Tab的窗口切换效果，同样支持一些自定义设置。</p>
+<h1 id="7-开发环境配置">7. 开发环境配置</h1>
+<h2 id="pip换源">pip换源</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf install python3-pip</span><br><span class="line">python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip</span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+<h2 id="Rust-启动！-Rust安装及换源"><s>Rust,启动！</s> Rust安装及换源</h2>
+<h3 id="步骤一：设置-Rustup-镜像，-修改配置-zshrc-or-bashrc">步骤一：设置 Rustup 镜像， 修改配置 ~/.zshrc or ~/.bashrc</h3>
+<p>将下列代码加入到  <code>~/.zshrc</code> or <code>~/.bashrc</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> RUSTUP_DIST_SERVER=<span class="string">&quot;https://rsproxy.cn&quot;</span></span><br><span class="line"><span class="built_in">export</span> RUSTUP_UPDATE_ROOT=<span class="string">&quot;https://rsproxy.cn/rustup&quot;</span></span><br></pre></td></tr></table></figure>
+<p>然后重启终端</p>
+<h3 id="步骤二：安装-Rust（请先完成步骤一的环境变量导入并-source-rc-文件或重启终端生效）">步骤二：安装 Rust（请先完成步骤一的环境变量导入并 source rc 文件或重启终端生效）</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl --proto <span class="string">&#x27;=https&#x27;</span> --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh</span><br></pre></td></tr></table></figure>
+<h3 id="步骤三：设置-crates-io-镜像，-修改配置-cargo-config">步骤三：设置 <code>crates.io</code> 镜像， 修改配置 <code>~/.cargo/config</code></h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[source.crates-io]</span><br><span class="line">replace-with = <span class="string">&#x27;rsproxy-sparse&#x27;</span></span><br><span class="line">[source.rsproxy]</span><br><span class="line">registry = <span class="string">&quot;https://rsproxy.cn/crates.io-index&quot;</span></span><br><span class="line">[source.rsproxy-sparse]</span><br><span class="line">registry = <span class="string">&quot;sparse+https://rsproxy.cn/index/&quot;</span></span><br><span class="line">[registries.rsproxy]</span><br><span class="line">index = <span class="string">&quot;https://rsproxy.cn/crates.io-index&quot;</span></span><br><span class="line">[net]</span><br><span class="line">git-fetch-with-cli = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h1 id="8-卸载无用的预装软件">8. 卸载无用的预装软件</h1>
+<p>首先是卸载LibreOffice</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dnf remove libreoffice*</span><br></pre></td></tr></table></figure>
+<h1 id="待未完续（"><strong>待未完续</strong>（</h1>
+<h1 id="我想鸽了-（不是）"><s>我想鸽了</s> （不是）</h1>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>fedora</tag>
+        <tag>美化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>怎样在Ubuntu24.04上用命令行正确安装Chrome</title>
     <url>/fjqz177-hexo-next-pages/posts/11/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>网上有太多人在Ubuntu上安装Chrome都是直接下载deb包安装，这样不仅不方便，而且更新也很操蛋</h1>
-<h1>不说了，命令行启动！</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="网上有太多人在Ubuntu上安装Chrome都是直接下载deb包安装，这样不仅不方便，而且更新也很操蛋">网上有太多人在Ubuntu上安装Chrome都是直接下载deb包安装，这样不仅不方便，而且更新也很操蛋</h1>
+<h1 id="不说了，命令行启动！">不说了，命令行启动！</h1>
 <span id="more"></span>
 <ol>
 <li>
@@ -2455,13 +2423,29 @@ gl=‘git pull’</p>
       </tags>
   </entry>
   <entry>
+    <title>图形化恩尼格码密码机 初版</title>
+    <url>/fjqz177-hexo-next-pages/posts/2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="图形化恩尼格码密码机-初版">图形化恩尼格码密码机 初版</h1>
+<h2 id="初版">初版</h2>
+<h2 id="源码">源码</h2>
+<span id="more"></span>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 此程序需安装easygui库使用</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> ezgui</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">simple_replace</span>(<span class="params">password, replace_word1, replace_word2, replace_word3</span>):  </span><br><span class="line">    count = <span class="number">0</span>  </span><br><span class="line">    new_pass = <span class="string">&#x27;&#x27;</span>  </span><br><span class="line">    ori_table = <span class="string">&#x27;abcdefghijklmnopqrstuvwxyz&#x27;</span>  </span><br><span class="line">    <span class="keyword">for</span> obj <span class="keyword">in</span> password:  </span><br><span class="line">        table1 = <span class="built_in">str</span>.maketrans(ori_table, replace_word1)  <span class="comment"># 建立转子1的映射表</span></span><br><span class="line">        table2 = <span class="built_in">str</span>.maketrans(ori_table, replace_word2)  <span class="comment"># 建立转子2的映射表</span></span><br><span class="line">        table3 = <span class="built_in">str</span>.maketrans(ori_table, replace_word3)  <span class="comment"># 建立转子3的映射表</span></span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(obj, table1)  </span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(new_obj, table2)  </span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(new_obj, table3)  </span><br><span class="line">        new_obj = reverse_word(new_obj)  </span><br><span class="line">        reverse_table1 = <span class="built_in">str</span>.maketrans(replace_word1, ori_table)  </span><br><span class="line">        reverse_table2 = <span class="built_in">str</span>.maketrans(replace_word2, ori_table)</span><br><span class="line">        reverse_table3 = <span class="built_in">str</span>.maketrans(replace_word3, ori_table)</span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(new_obj, reverse_table3)  </span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(new_obj, reverse_table2)  </span><br><span class="line">        new_obj = <span class="built_in">str</span>.translate(new_obj, reverse_table1)  </span><br><span class="line">        new_pass += new_obj  </span><br><span class="line">        replace_word1 = rotors(replace_word1)  </span><br><span class="line">        count += <span class="number">1</span>  </span><br><span class="line">        <span class="keyword">if</span> count % <span class="number">676</span> == <span class="number">0</span>:   </span><br><span class="line">            replace_word3 = rotors(replace_word3)</span><br><span class="line">        <span class="keyword">elif</span> count % <span class="number">26</span> == <span class="number">0</span>:  </span><br><span class="line">            replace_word2 = rotors(replace_word2)</span><br><span class="line">    <span class="keyword">return</span> new_pass  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">is_str</span>(<span class="params">password, replace_word1, replace_word2, replace_word3</span>):  </span><br><span class="line">    an = re.<span class="keyword">match</span>(<span class="string">&#x27;[a-z]+$&#x27;</span>, password)  </span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">type</span>(password) == <span class="built_in">type</span>(replace_word1) == <span class="built_in">type</span>(replace_word2) == <span class="built_in">type</span>(replace_word3) == <span class="built_in">type</span>(<span class="string">&#x27;a&#x27;</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;密码必须是字符串！&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="keyword">not</span> an:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;字符串只能包含小写字母！&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="keyword">not</span> <span class="built_in">len</span>(replace_word1) == <span class="built_in">len</span>(replace_word2) == <span class="built_in">len</span>(replace_word3) == <span class="number">26</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;替换码必须为26个字母！&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span>  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rotors</span>(<span class="params">replace_word</span>):  </span><br><span class="line">    <span class="keyword">return</span> replace_word[<span class="number">1</span>:] + replace_word[<span class="number">0</span>]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 自反器很好设置的，只要设置一个字典，保证所有字母（26个）两两对应就可以了</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">reverse_word</span>(<span class="params">word</span>):</span><br><span class="line">    dic = &#123;<span class="string">&#x27;a&#x27;</span>: <span class="string">&#x27;n&#x27;</span>, <span class="string">&#x27;b&#x27;</span>: <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;c&#x27;</span>: <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;d&#x27;</span>: <span class="string">&#x27;q&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;e&#x27;</span>: <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;f&#x27;</span>: <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;g&#x27;</span>: <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;h&#x27;</span>: <span class="string">&#x27;u&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;i&#x27;</span>: <span class="string">&#x27;v&#x27;</span>, <span class="string">&#x27;j&#x27;</span>: <span class="string">&#x27;w&#x27;</span>, <span class="string">&#x27;k&#x27;</span>: <span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;l&#x27;</span>: <span class="string">&#x27;y&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;m&#x27;</span>: <span class="string">&#x27;z&#x27;</span>, <span class="string">&#x27;n&#x27;</span>: <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;o&#x27;</span>: <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;p&#x27;</span>: <span class="string">&#x27;c&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;q&#x27;</span>: <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;r&#x27;</span>: <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;s&#x27;</span>: <span class="string">&#x27;f&#x27;</span>, <span class="string">&#x27;t&#x27;</span>: <span class="string">&#x27;g&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;u&#x27;</span>: <span class="string">&#x27;h&#x27;</span>, <span class="string">&#x27;v&#x27;</span>: <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;w&#x27;</span>: <span class="string">&#x27;j&#x27;</span>, <span class="string">&#x27;x&#x27;</span>: <span class="string">&#x27;k&#x27;</span>,</span><br><span class="line">           <span class="string">&#x27;y&#x27;</span>: <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;z&#x27;</span>: <span class="string">&#x27;m&#x27;</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> dic[word]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    title = <span class="string">&#x27;by 石光k一5&#x27;</span></span><br><span class="line">    ezgui.msgbox(<span class="string">&#x27;这是恩尼格码密码机&#x27;</span>,title)</span><br><span class="line">    a_password = ezgui.enterbox(<span class="string">&#x27;请输入明文加密或密文解密:&#x27;</span>,title)</span><br><span class="line">    r_password1 = <span class="string">&#x27;qwertyuiopasdfghjklzxcvbnm&#x27;</span>  <span class="comment"># 转子1，自己设置即可</span></span><br><span class="line">    r_password2 = <span class="string">&#x27;asdfqwerzxcvtyuiopghjklbnm&#x27;</span>  <span class="comment"># 转子2，自己设置即可</span></span><br><span class="line">    r_password3 = <span class="string">&#x27;poiuytrewqasdfghjklmnbvcxz&#x27;</span>  <span class="comment"># 转子3，自己设置即可</span></span><br><span class="line">    <span class="keyword">if</span> is_str(a_password, r_password1, r_password2, r_password3):</span><br><span class="line">        msg=<span class="string">f&#x27;密文/明文如下:<span class="subst">&#123;simple_replace(a_password, r_password1, r_password2, r_password3)&#125;</span>&#x27;</span></span><br><span class="line">        ezgui.textbox(msg,title)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用Rust实现RSA加密解密</title>
     <url>/fjqz177-hexo-next-pages/posts/8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>在网上找了半天都没有找到用<code>Rust</code>实现<code>RSA</code>算法的文章，没办法，只好自己对着自己用<code>Python</code>写的版本重写一遍😁。</h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="在网上找了半天都没有找到用Rust实现RSA算法的文章，没办法，只好自己对着自己用Python写的版本重写一遍😁。">在网上找了半天都没有找到用<code>Rust</code>实现<code>RSA</code>算法的文章，没办法，只好自己对着自己用<code>Python</code>写的版本重写一遍😁。</h1>
 <span id="more"></span>
-<h1>这是源代码</h1>
+<h1 id="这是源代码">这是源代码</h1>
 <figure class="highlight rust"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> num_bigint::BigInt; <span class="comment">//用于超大整数的计算</span></span><br><span class="line"><span class="keyword">use</span> num_traits::&#123;One, Zero&#125;; <span class="comment">//用于BigInt的常量0和1</span></span><br><span class="line"><span class="keyword">use</span> std::time::Instant; <span class="comment">//用于计算程序运行时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 扩展欧几里得算法</span></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">ext_gcd</span>(a: &amp;BigInt, b: &amp;BigInt) <span class="punctuation">-&gt;</span> (BigInt, BigInt, BigInt) &#123;</span><br><span class="line">    <span class="keyword">if</span> *b == Zero::<span class="title function_ invoke__">zero</span>() &#123;</span><br><span class="line">        (a.<span class="title function_ invoke__">clone</span>(), One::<span class="title function_ invoke__">one</span>(), Zero::<span class="title function_ invoke__">zero</span>())</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> (r, x1, y1) = <span class="title function_ invoke__">ext_gcd</span>(b, &amp;(a % b));</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">x</span> = y1.<span class="title function_ invoke__">clone</span>();</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">y</span> = x1 - ((a / b) * &amp;y1);</span><br><span class="line">        (r, x, y)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 超大整数超大次幂再对超大的整数取模</span></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">exp_mode</span>(base: &amp;BigInt, exponent: &amp;BigInt, modulus: &amp;BigInt) <span class="punctuation">-&gt;</span> BigInt &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">zero</span> = Zero::<span class="title function_ invoke__">zero</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">one</span>: BigInt = One::<span class="title function_ invoke__">one</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">two</span> = &amp;one + &amp;one;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">result</span> = one.<span class="title function_ invoke__">clone</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">base</span> = base % modulus;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">exponent</span> = exponent.<span class="title function_ invoke__">clone</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> exponent &gt; zero &#123;</span><br><span class="line">        <span class="keyword">if</span> &amp;exponent % &amp;two == one &#123;</span><br><span class="line">            result = result * &amp;base % modulus;</span><br><span class="line">        &#125;</span><br><span class="line">        exponent = exponent &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        base = &amp;base * &amp;base % modulus;</span><br><span class="line">    &#125;</span><br><span class="line">    result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算公钥和私钥</span></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">gen_key</span>(p: &amp;BigInt, q: &amp;BigInt) <span class="punctuation">-&gt;</span> ((BigInt, BigInt), (BigInt, BigInt)) &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">n</span> = p * q;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">fy</span> = (p - <span class="number">1u32</span>) * (q - <span class="number">1u32</span>);</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">e</span>: BigInt = <span class="number">65537u32</span>.<span class="title function_ invoke__">into</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> (_, x, _) = <span class="title function_ invoke__">ext_gcd</span>(&amp;e, &amp;fy);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">d</span> = <span class="keyword">if</span> x &lt; Zero::<span class="title function_ invoke__">zero</span>() &#123; x + &amp;fy &#125; <span class="keyword">else</span> &#123; x &#125;;</span><br><span class="line"></span><br><span class="line">    ((n.<span class="title function_ invoke__">clone</span>(), e), (n, d))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加密函数</span></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">encrypt</span>(m: &amp;BigInt, pubkey: &amp;(BigInt, BigInt)) <span class="punctuation">-&gt;</span> (BigInt, <span class="type">f64</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">start_time</span> = Instant::<span class="title function_ invoke__">now</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">c</span> = <span class="title function_ invoke__">exp_mode</span>(m, &amp;pubkey.<span class="number">1</span>, &amp;pubkey.<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">time_elapsed</span> = start_time.<span class="title function_ invoke__">elapsed</span>().<span class="title function_ invoke__">as_secs_f64</span>();</span><br><span class="line"></span><br><span class="line">    (c, time_elapsed)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解密函数</span></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">decrypt</span>(c: &amp;BigInt, selfkey: &amp;(BigInt, BigInt)) <span class="punctuation">-&gt;</span> (BigInt, <span class="type">f64</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">start_time</span> = Instant::<span class="title function_ invoke__">now</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">m</span> = <span class="title function_ invoke__">exp_mode</span>(c, &amp;selfkey.<span class="number">1</span>, &amp;selfkey.<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">time_elapsed</span> = start_time.<span class="title function_ invoke__">elapsed</span>().<span class="title function_ invoke__">as_secs_f64</span>();</span><br><span class="line"></span><br><span class="line">    (m, time_elapsed)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断字符串是否为纯数字</span></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">is_str_numeric</span>(s: &amp;<span class="type">str</span>) <span class="punctuation">-&gt;</span> <span class="type">bool</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">re</span> = regex::Regex::<span class="title function_ invoke__">new</span>(<span class="string">r&quot;^\d+$&quot;</span>).<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">    re.<span class="title function_ invoke__">is_match</span>(s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="comment">// 此处应使用实际的用户输入，注意需要处理错误和异常的输入</span></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">p</span> = <span class="string">&quot;106697219132480173106064317148705638676529121742557567770857687729397446898790451577487723991083173010242416863238099716044775658681981821407922722052778958942891831033512463262741053961681512908218003840408526915629689432111480588966800949428079015682624591636010678691927285321708935076221951173426894836169&quot;</span>.parse::&lt;BigInt&gt;().<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">q</span> = <span class="string">&quot;144819424465842307806353672547344125290716753535239658417883828941232509622838692761917211806963011168822281666033695157426515864265527046213326145174398018859056439431422867957079149967592078894410082695714160599647180947207504108618794637872261572262805565517756922288320779308895819726074229154002310375209&quot;</span>.parse::&lt;BigInt&gt;().<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 生成公钥和私钥</span></span><br><span class="line">    <span class="keyword">let</span> (pubkey, selfkey) = <span class="title function_ invoke__">gen_key</span>(&amp;p, &amp;q);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">loop</span> &#123;</span><br><span class="line">        <span class="comment">// 此处应使用实际的用户输入，注意需要处理错误和异常的输入</span></span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;请输入要加密或解密的数字:&quot;</span>);</span><br><span class="line">        <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">input</span> = <span class="type">String</span>::<span class="title function_ invoke__">new</span>();</span><br><span class="line">        std::io::<span class="title function_ invoke__">stdin</span>().<span class="title function_ invoke__">read_line</span>(&amp;<span class="keyword">mut</span> input).<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 判断输入是否为纯数字</span></span><br><span class="line">        <span class="keyword">if</span> <span class="title function_ invoke__">is_str_numeric</span>(&amp;input.<span class="title function_ invoke__">trim</span>()) &#123;</span><br><span class="line">            <span class="comment">// 输入是纯数字</span></span><br><span class="line">            <span class="comment">// 将输入转换为BigInt类型</span></span><br><span class="line">            <span class="keyword">let</span> <span class="variable">message</span> = input.<span class="title function_ invoke__">trim</span>().parse::&lt;BigInt&gt;().<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">            <span class="built_in">println!</span>(<span class="string">&quot;请输入要执行的操作(1为加密,2为解密,3为退出):&quot;</span>);</span><br><span class="line">            <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">op</span> = <span class="type">String</span>::<span class="title function_ invoke__">new</span>();</span><br><span class="line">            std::io::<span class="title function_ invoke__">stdin</span>().<span class="title function_ invoke__">read_line</span>(&amp;<span class="keyword">mut</span> op).<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">            <span class="keyword">let</span> <span class="variable">op</span> = op.<span class="title function_ invoke__">trim</span>().parse::&lt;<span class="type">u32</span>&gt;().<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 根据用户输入执行相应操作</span></span><br><span class="line">            <span class="keyword">match</span> op &#123;</span><br><span class="line">                <span class="number">1</span> =&gt; &#123;</span><br><span class="line">                    <span class="built_in">println!</span>(<span class="string">&quot;待加密数字: &#123;&#125;&quot;</span>, message);</span><br><span class="line">                    <span class="keyword">let</span> (c, d) = <span class="title function_ invoke__">encrypt</span>(&amp;message, &amp;pubkey);</span><br><span class="line">                    <span class="built_in">println!</span>(<span class="string">&quot;加密结果: &#123;&#125;&quot;</span>, c);</span><br><span class="line">                    <span class="built_in">println!</span>(<span class="string">&quot;加密耗时: &#123;:?&#125;秒&quot;</span>, d);</span><br><span class="line">                    ()</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="number">2</span> =&gt; &#123;</span><br><span class="line">                    <span class="keyword">let</span> (m, d) = <span class="title function_ invoke__">decrypt</span>(&amp;message, &amp;selfkey);</span><br><span class="line">                    <span class="built_in">println!</span>(<span class="string">&quot;解密结果: &#123;&#125;&quot;</span>, m);</span><br><span class="line">                    <span class="built_in">println!</span>(<span class="string">&quot;解密耗时: &#123;:?&#125;秒&quot;</span>, d);</span><br><span class="line">                    ()</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="number">3</span> =&gt; &#123;</span><br><span class="line">                    <span class="built_in">println!</span>(<span class="string">&quot;退出程序&quot;</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                _ =&gt; &#123;</span><br><span class="line">                    <span class="built_in">println!</span>(<span class="string">&quot;无效操作&quot;</span>);</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 输入不是纯数字</span></span><br><span class="line">            <span class="built_in">println!</span>(<span class="string">&quot;密码必须是纯数字！&quot;</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1>这是<code>Toml</code>文件</h1>
+<h1 id="这是Toml文件">这是<code>Toml</code>文件</h1>
 <figure class="highlight toml"><table><tr><td class="code"><pre><span class="line"><span class="section">[dependencies]</span></span><br><span class="line"><span class="attr">num-bigint</span> = <span class="string">&quot;0.4.4&quot;</span></span><br><span class="line"><span class="attr">num-traits</span> = <span class="string">&quot;0.2.17&quot;</span></span><br><span class="line"><span class="attr">regex</span> = <span class="string">&quot;1.10.2&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>编程</category>
@@ -2472,18 +2456,34 @@ gl=‘git pull’</p>
       </tags>
   </entry>
   <entry>
+    <title>RSA加密解密 初版</title>
+    <url>/fjqz177-hexo-next-pages/posts/3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="RSA加密解密-初版">RSA加密解密 初版</h1>
+<h2 id="初版">初版</h2>
+<h2 id="源码">源码</h2>
+<span id="more"></span>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">扩展欧几里的算法</span></span><br><span class="line"><span class="string">计算 ax + by = 1中的x与y的整数解（a与b互质）</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ext_gcd</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">        x1 = <span class="number">1</span></span><br><span class="line">        y1 = <span class="number">0</span></span><br><span class="line">        x = x1</span><br><span class="line">        y = y1</span><br><span class="line">        r = a</span><br><span class="line">        <span class="keyword">return</span> r, x, y</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        r, x1, y1 = ext_gcd(b, a % b)</span><br><span class="line">        x = y1</span><br><span class="line">        y = x1 - a // b * y1</span><br><span class="line">        <span class="keyword">return</span> r, x, y</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">超大整数超大次幂然后对超大的整数取模</span></span><br><span class="line"><span class="string">(base ^ exponent) mod n</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">exp_mode</span>(<span class="params">base, exponent, n</span>):</span><br><span class="line">    bin_array = <span class="built_in">bin</span>(exponent)[<span class="number">2</span>:][::-<span class="number">1</span>]</span><br><span class="line">    r = <span class="built_in">len</span>(bin_array)</span><br><span class="line">    base_array = []</span><br><span class="line">    </span><br><span class="line">    pre_base = base</span><br><span class="line">    base_array.append(pre_base)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(r - <span class="number">1</span>):</span><br><span class="line">        next_base = (pre_base * pre_base) % n </span><br><span class="line">        base_array.append(next_base)</span><br><span class="line">        pre_base = next_base</span><br><span class="line">        </span><br><span class="line">    a_w_b = __multi(base_array, bin_array, n)</span><br><span class="line">    <span class="keyword">return</span> a_w_b % n</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">__multi</span>(<span class="params">array, bin_array, n</span>):</span><br><span class="line">    result = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(array)):</span><br><span class="line">        a = array[index]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">int</span>(bin_array[index]):</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        result *= a</span><br><span class="line">        result = result % n <span class="comment"># 加快连乘的速度</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算公钥和私钥的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">gen_key</span>(<span class="params">p, q</span>):</span><br><span class="line">    n = p * q</span><br><span class="line">    fy = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)      <span class="comment"># 计算与n互质的整数个数 欧拉函数</span></span><br><span class="line">    e = <span class="number">65537</span>                    <span class="comment"># 选取e   一般选取65537</span></span><br><span class="line">    <span class="comment"># generate d</span></span><br><span class="line">    a = e</span><br><span class="line">    b = fy</span><br><span class="line">    r, x, y = ext_gcd(a, b)</span><br><span class="line">    <span class="comment"># 计算出的x不能是负数，如果是负数，说明p、q、e选取失败，不过可以把x加上fy，使x为正数，才能计算。</span></span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">        x = x + fy</span><br><span class="line">    d = x</span><br><span class="line">    <span class="comment"># 返回：   公钥     私钥</span></span><br><span class="line">    <span class="keyword">return</span>    (n, e), (n, d)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加密函数 m是被加密的信息 加密成为c</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">encrypt</span>(<span class="params">m, pubkey</span>):</span><br><span class="line">    n = pubkey[<span class="number">0</span>]</span><br><span class="line">    e = pubkey[<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    c = exp_mode(m, e, n)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"><span class="comment"># 解密函数 c是密文，解密为明文m</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decrypt</span>(<span class="params">c, selfkey</span>):</span><br><span class="line">    n = selfkey[<span class="number">0</span>]</span><br><span class="line">    d = selfkey[<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    m = exp_mode(c, d, n)</span><br><span class="line">    <span class="keyword">return</span> m</span><br><span class="line"></span><br><span class="line"><span class="comment"># 主程序</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;公钥私钥中用到的两个大质数p,q，都是1024位&#x27;&#x27;&#x27;</span></span><br><span class="line">    p = <span class="number">106697219132480173106064317148705638676529121742557567770857687729397446898790451577487723991083173010242416863238099716044775658681981821407922722052778958942891831033512463262741053961681512908218003840408526915629689432111480588966800949428079015682624591636010678691927285321708935076221951173426894836169</span></span><br><span class="line">    q = <span class="number">144819424465842307806353672547344125290716753535239658417883828941232509622838692761917211806963011168822281666033695157426515864265527046213326145174398018859056439431422867957079149967592078894410082695714160599647180947207504108618794637872261572262805565517756922288320779308895819726074229154002310375209</span></span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;生成公钥私钥&#x27;&#x27;&#x27;</span></span><br><span class="line">    pubkey, selfkey = gen_key(p, q)</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;需要被加密的信息转化成数字，长度小于秘钥n的长度，如果信息长度大于n的长度，那么分段进行加密，分段解密即可。&#x27;&#x27;&#x27;</span></span><br><span class="line">    m = <span class="number">1356205320457610288745198967657644166379972189839804389074591563666634066646564410685955217825048626066190866536592405966964024022236587593447122392540038493893121248948780525117822889230574978651418075403357439692743398250207060920929117606033490559159560987768768324823011579283223392964454439904542675637683985296529882973798752471233683249209762843835985174607047556306705224118165162905676610067022517682197138138621344578050034245933990790845007906416093198845798901781830868021761765904777531676765131379495584915533823288125255520904108500256867069512326595285549579378834222350197662163243932424184772115345</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;待加密信息--&gt;&quot;</span>,m)</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;信息加密，m被加密的信息，c是加密后的信息&#x27;&#x27;&#x27;</span></span><br><span class="line">    c = encrypt(m, pubkey)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;被加密后的密文--&gt;&quot;</span>,c)</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;信息解密&#x27;&#x27;&#x27;</span></span><br><span class="line">    d = decrypt(c, selfkey)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;被解密后的明文--&gt;&quot;</span>,d)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>终极Github个人主页美化教程</title>
     <url>/fjqz177-hexo-next-pages/posts/7/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1>先带大家看一下我的<a href="https://github.com/fjqz177">Github首页</a></h1>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\fjqz177-hexo-next-pages\assets\css\APlayer.min.css"><script src="\fjqz177-hexo-next-pages\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="先带大家看一下我的Github首页">先带大家看一下我的<a href="https://github.com/fjqz177">Github首页</a></h1>
 <p><img src="https://pic.imgdb.cn/item/65f833419f345e8d032b612a.gif" alt=""></p>
-<h1>酷吧，虽然咱代码不会写，但气势绝对不能输，逼格总是要先装起来的，装着装着，说不定，就会写代码了呢！！！（大误 😄）</h1>
-<h1>接下来就教你们如何装逼</h1>
+<h1 id="酷吧，虽然咱代码不会写，但气势绝对不能输，逼格总是要先装起来的，装着装着，说不定，就会写代码了呢！！！（大误-😄）">酷吧，虽然咱代码不会写，但气势绝对不能输，逼格总是要先装起来的，装着装着，说不定，就会写代码了呢！！！（大误 😄）</h1>
+<h1 id="接下来就教你们如何装逼">接下来就教你们如何装逼</h1>
 <span id="more"></span>
-<h1>注意，本文许多网站需要科学上网才能使用，请自备科学上网工具</h1>
-<h1>0.准备工作</h1>
+<h1 id="注意，本文许多网站需要科学上网才能使用，请自备科学上网工具">注意，本文许多网站需要科学上网才能使用，请自备科学上网工具</h1>
+<h1 id="0-准备工作">0.准备工作</h1>
 <p>首先需要新建一个和 Github 用户名相同的仓库<img src="https://pic.imgdb.cn/item/65f8339c9f345e8d032d9705.jpg" alt=""><br>
 记得勾选<code>Add a README file</code>这个选项接下来在自己电脑上创建一个<code>.md</code>后缀的文件，名称随意，并用支持<code>Markdown</code>语法的编辑器编辑，当然嫌麻烦可以用<a href="https://arya.pages.dev/">https://arya.pages.dev/</a>或者其他你喜欢的在线编辑器编辑</p>
-<h1>1.带有打字特效的文字</h1>
+<h1 id="1-带有打字特效的文字">1.带有打字特效的文字</h1>
 <p>打字特效生成网站：<a href="https://readme-typing-svg.herokuapp.com/demo/">Readme Typing SVG - Demo Site</a></p>
 <p><img src="https://pic.imgdb.cn/item/65f833ae9f345e8d032dfde9.jpg" alt=""></p>
 <p>里面有很多自定义选项，大家可以根据自己喜好进行调整调整完以后点击<code>Markdown</code>下的<code>Copy To Clipboard</code>，然后粘贴进刚才的<code>.md</code>编辑器里</p>
@@ -2491,7 +2491,7 @@ gl=‘git pull’</p>
 <p align="center">
     <a href="https://fjqz177.github.io"><img src="https://readme-typing-svg.herokuapp.com?font=consolas&weight=100&size=45&duration=4000&pause=4000&center=%E7%9C%9F%E7%9A%84&vCenter=%E7%9C%9F%E7%9A%84&multiline=true&width=420&height=70&lines=fjqz177.github.io" alt="Typing SVG" /></a>
 </p>
-<h1>2.社交关注者数目小牌子</h1>
+<h1 id="2-社交关注者数目小牌子">2.社交关注者数目小牌子</h1>
 <p>用 Substats 配合<a href="https://www.shields.io">shields.io</a>制作动态小牌子</p>
 <p>创建动态图标方法：点击进入这个网页 <a href="https://shields.io/#dynamic-badge">shields.io dynamic-badge</a></p>
 <blockquote>
@@ -2513,7 +2513,7 @@ gl=‘git pull’</p>
 <blockquote>
 <p>图标是使用 base64 将 svg 进行转码的，所以很长~~</p>
 </blockquote>
-<h1>3.贪吃蛇吃绿点</h1>
+<h1 id="3-贪吃蛇吃绿点">3.贪吃蛇吃绿点</h1>
 <p><img src="https://raw.githubusercontent.com/fjqz177/fjqz177/main/dist/github-contribution-grid-snake.svg" alt=""></p>
 <p>在仓库里点击<code>Creat new file</code><img src="https://pic.imgdb.cn/item/65f833cd9f345e8d032ebaef.jpg" alt=""><br>
 将<code>.github/workflows/generate_snake.yml</code>粘贴进图示框中<img src="https://pic.imgdb.cn/item/65f833d89f345e8d032efc6e.jpg" alt=""><br>
@@ -2522,7 +2522,7 @@ gl=‘git pull’</p>
 <p>将如下粘贴进刚才的<code>.md</code>编辑器里</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![](https://raw.githubusercontent.com/fjqz177/fjqz177/main/dist/github-contribution-grid-snake.svg)</span><br></pre></td></tr></table></figure>
 <p>记得把用户名和仓库名都改成自己的Github账号名</p>
-<h1>4.GitHub Stats Card &amp; Most used languages</h1>
+<h1 id="4-GitHub-Stats-Card-Most-used-languages">4.GitHub Stats Card &amp; Most used languages</h1>
 <p>效果如下</p>
 <div align="center">
 <span>&emsp;&emsp;</span>
@@ -2531,16 +2531,16 @@ gl=‘git pull’</p>
 </div>
 <p>代码放在这里了，只需将其中的<code>fjqz177</code>替换成你自己的<code>Github</code>名称即可</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="symbol">&amp;emsp;</span><span class="symbol">&amp;emsp;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">height</span>=<span class="string">&quot;170px&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://github-readme-stats.vercel.app/api?username=fjqz177&quot;</span> /&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="symbol">&amp;emsp;</span><span class="symbol">&amp;emsp;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">height</span>=<span class="string">&quot;170px&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://github-readme-stats.vercel.app/api/top-langs/?username=fjqz177&amp;layout=compact&amp;langs_count=8&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="symbol">&amp;emsp;</span><span class="symbol">&amp;emsp;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1>5.Github-Readme-Activity-Graph（GitHub 活动统计图）</h1>
+<h1 id="5-Github-Readme-Activity-Graph（GitHub-活动统计图）">5.Github-Readme-Activity-Graph（GitHub 活动统计图）</h1>
 <p><a href="https://github.com/ashutosh00710/github-readme-activity-graph"><img src="https://github-readme-activity-graph-fjqz177.vercel.app/graph?username=fjqz177&amp;theme=github-light" alt="Ashutosh's github activity graph"></a></p>
 <p>将其中的<code>fjqz177</code>替换成你自己的<code>Github</code>名称即可</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[![Ashutosh&#x27;s github activity graph](https://github-readme-activity-graph-fjqz177.vercel.app/graph?username=fjqz177&amp;theme=github-light)](https://github.com/ashutosh00710/github-readme-activity-graph)</span><br></pre></td></tr></table></figure>
-<h1>6.GitHub Streak（GitHub 连续打卡） &amp; Github Trophy（Github 奖杯）</h1>
+<h1 id="6-GitHub-Streak（GitHub-连续打卡）-Github-Trophy（Github-奖杯）">6.GitHub Streak（GitHub 连续打卡） &amp; Github Trophy（Github 奖杯）</h1>
 <p><img src="https://github-readme-streak-stats.herokuapp.com/?user=fjqz177" alt=""><br>
 <img src="https://github-profile-trophy.vercel.app/?username=fjqz177" alt=""></p>
 <p>将其中的<code>fjqz177</code>替换成你自己的<code>Github</code>名称即可</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span>  <span class="attr">src</span>=<span class="string">&quot;https://github-readme-streak-stats.herokuapp.com/?user=fjqz177&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span>  <span class="attr">src</span>=<span class="string">&quot;https://github-profile-trophy.vercel.app/?username=fjqz177&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1>7.Logo小牌子</h1>
+<h1 id="7-Logo小牌子">7.Logo小牌子</h1>
 <p><img src="https://pic.imgdb.cn/item/65f833e59f345e8d032f524d.jpg" alt=""><br>
 怎么样，这么多牌子挂出来是不是被吓到了呢在这里需要用到<a href="https://simpleicons.org/">Simpleicons</a>这个网站以及如下模板</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&amp;logo=Git&amp;logoColor=white)</span><br></pre></td></tr></table></figure>
@@ -2554,7 +2554,7 @@ gl=‘git pull’</p>
 <p>打开上面的<a href="https://simpleicons.org/">Simpleicons</a>的网址，找到你想要的Logo<br>
 <img src="https://pic.imgdb.cn/item/65f834009f345e8d032ff923.jpg" alt=""><br>
 将（1）中的文字复制，替换掉①②④的原有内容鼠标移到（2）上点一下即可复制，然后替换掉③中原有内容，记得删除<code>#</code>号举一反三，想加什么自己加就行</p>
-<h1>8.最后在编辑器内进行排版，排成你自己想要的效果，复制进github仓库内，即可完成</h1>
+<h1 id="8-最后在编辑器内进行排版，排成你自己想要的效果，复制进github仓库内，即可完成">8.最后在编辑器内进行排版，排成你自己想要的效果，复制进github仓库内，即可完成</h1>
 <p>喜欢的话可以到<a href="https://github.com/fjqz177">我的Github个人主页</a>点一个Follow哦！</p>
 ]]></content>
       <categories>
@@ -2562,8 +2562,8 @@ gl=‘git pull’</p>
       </categories>
       <tags>
         <tag>Markdown</tag>
-        <tag>美化</tag>
         <tag>GitHub</tag>
+        <tag>美化</tag>
       </tags>
   </entry>
 </search>
